@@ -32,7 +32,7 @@
 
 Reading rules:
 
-- An item line holds a code, a description that may span lines (and continue after the numbers), a unit, then either **Labour | Material | Through** (3 columns) or **Labour | Machinery | Material | Through** (4 columns, road chapter and A&C slips). Through = sum of components, ±1 for rounding (e.g. 10.37.1 Kota stone 25 mm: 301 + 584 = 885 per sqm).
+- An item line holds a code, a description that may span lines (and continue after the numbers), a unit, then either **Labour | Material | Through** (3 columns) or **Labour | Machinery | Material | Through** (4 columns, road chapter and A&C slips). Through = sum of components within ±1 or 0.5% of the through rate, whichever is larger (e.g. 10.37.1 Kota stone 25 mm: 301 + 584 = 885 per sqm); some rows print only a through rate and are kept.
 - Item (through) rates are "inclusive of GST and all other taxes, Labour Welfare Cess and contractor's profit". Slip 19: HSR 2021 rates include 12% GST and "will be read with a multiple factor of 0.893 to exclude the impact of GST".
 - Basic material, labour and plant rates exclude GST, labour cess, contractor's profit, overheads and carriage. Schedule B carriage rates include profit and overheads and exclude GST.
 - HSR publishes no profit/overhead percentage.
@@ -192,7 +192,7 @@ All tests fail first, use no network, and rely on the committed CSVs, small text
 
 ## 11. Evaluation
 
-`data/benchmark/stp_hsr_gold.csv` (HSR codes for the 38 STP rows, drafted by Claude and verified by the user) feeds `python3 -m buildflow.rate_benchmark`, which reports rows matched per method (verbatim, Groq, none), top-1 accuracy per method, and the share of the validation total covered.
+`data/benchmark/stp_hsr_gold.csv` (HSR codes for the 38 STP rows, drafted by Claude and verified by the user) feeds `python3 -m buildflow.rate_benchmark`, which reports rows matched per method (verbatim, Groq, none), top-1 accuracy per method, and the share of verified rows priced automatically (verbatim). The value share of the validation total needs reviewed rates, so it comes from the agent's `RATE_BASIS` finding.
 
 ## 12. Known gaps and risks
 
