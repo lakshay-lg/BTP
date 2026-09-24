@@ -1,0 +1,1164 @@
+{
+ "A01": {
+  "dar_item": "2.6.1",
+  "page_printed": 95,
+  "basis": {
+   "qty": 10.0,
+   "unit": "cum"
+  },
+  "final_rate_per_basis_unit": 177.5,
+  "resources": [
+   {
+    "section": "MACHINERY",
+    "code": "0020",
+    "desc": "Hydraulic Excavator (3D) with driver and fuel.",
+    "unit": "day",
+    "qty": 0.08,
+    "rate": 7850.0,
+    "amount": 628.0
+   },
+   {
+    "section": "MACHINERY",
+    "code": "0018",
+    "desc": "Hire and running charges of loader.",
+    "unit": "day",
+    "qty": 0.08,
+    "rate": 6700.0,
+    "amount": 536.0
+   },
+   {
+    "section": "LABOUR",
+    "code": "0128",
+    "desc": "Mate",
+    "unit": "day",
+    "qty": 0.04,
+    "rate": 816.0,
+    "amount": 32.64
+   },
+   {
+    "section": "LABOUR",
+    "code": "0115",
+    "desc": "Coolie",
+    "unit": "day",
+    "qty": 0.06,
+    "rate": 736.0,
+    "amount": 44.16
+   },
+   {
+    "section": "SUNDRY",
+    "code": "9999",
+    "desc": "Sundries (i.e. watch and ward, minor T&P etc.)",
+    "unit": "day",
+    "qty": 3.1,
+    "rate": 2.27,
+    "amount": 7.04
+   }
+  ],
+  "notes": [
+   "Average output of Hydraulic Excavator per",
+   "hour = 30cum."
+  ]
+ },
+ "A02": {
+  "dar_item": "4.1.8",
+  "page_printed": 157,
+  "basis": {
+   "qty": 1.0,
+   "unit": "cum"
+  },
+  "final_rate_per_basis_unit": 6812.0,
+  "resources": [
+   {
+    "section": "MATERIAL",
+    "code": "0293",
+    "desc": "Stone Aggregate (Single size) : 40 mm nominal size",
+    "unit": "cum",
+    "qty": 0.65,
+    "rate": 1400.0,
+    "amount": 910.0
+   },
+   {
+    "section": "MATERIAL",
+    "code": "0295",
+    "desc": "Stone Aggregate (Single size) : 20 mm nominal size",
+    "unit": "cum",
+    "qty": 0.24,
+    "rate": 1425.0,
+    "amount": 342.0
+   },
+   {
+    "section": "MATERIAL",
+    "code": "0982",
+    "desc": "Coarse sand (zone III)",
+    "unit": "cum",
+    "qty": 0.47,
+    "rate": 1450.0,
+    "amount": 681.5
+   },
+   {
+    "section": "MATERIAL",
+    "code": "0367",
+    "desc": "Portland Cement (0.1175 cum)",
+    "unit": "tonne",
+    "qty": 0.17,
+    "rate": 5156.0,
+    "amount": 876.52
+   },
+   {
+    "section": "LABOUR",
+    "code": "0155",
+    "desc": "Mason (average)",
+    "unit": "day",
+    "qty": 0.1,
+    "rate": 857.0,
+    "amount": 85.7
+   },
+   {
+    "section": "LABOUR",
+    "code": "0114",
+    "desc": "Beldar",
+    "unit": "day",
+    "qty": 1.63,
+    "rate": 736.0,
+    "amount": 1199.68
+   },
+   {
+    "section": "LABOUR",
+    "code": "0101",
+    "desc": "Bhisti",
+    "unit": "day",
+    "qty": 0.7,
+    "rate": 816.0,
+    "amount": 571.2
+   },
+   {
+    "section": "MACHINERY",
+    "code": "0002",
+    "desc": "Hire charges of Concrete Mixer 0.25 to 0.40 cum with hooper",
+    "unit": "day",
+    "qty": 0.07,
+    "rate": 900.0,
+    "amount": 63.0
+   },
+   {
+    "section": "MACHINERY",
+    "code": "0012",
+    "desc": "Vibrator(Needle type 40mm)",
+    "unit": "day",
+    "qty": 0.07,
+    "rate": 400.0,
+    "amount": 28.0
+   },
+   {
+    "section": "SUNDRY",
+    "code": "9999",
+    "desc": "Sundries",
+    "unit": "L.S.",
+    "qty": 13.52,
+    "rate": 2.27,
+    "amount": 30.69
+   }
+  ],
+  "notes": []
+ },
+ "A03": {
+  "dar_item": "5.22.6",
+  "page_printed": 261,
+  "basis": {
+   "qty": 1.0,
+   "unit": "quintal-"
+  },
+  "final_rate_per_basis_unit": 107.85,
+  "resources": [
+   {
+    "section": "MATERIAL",
+    "code": "1005",
+    "desc": "Twisted steel / deformed bars",
+    "unit": "quintal",
+    "qty": 1.05,
+    "rate": 5550.0,
+    "amount": 5827.5
+   },
+   {
+    "section": "SUNDRY",
+    "code": "9999",
+    "desc": "Cover block",
+    "unit": "L.S.",
+    "qty": 26.0,
+    "rate": 2.27,
+    "amount": 59.02
+   },
+   {
+    "section": "LABOUR",
+    "code": "0102",
+    "desc": "Blacksmith 1st class",
+    "unit": "day",
+    "qty": 1.0,
+    "rate": 897.0,
+    "amount": 897.0
+   },
+   {
+    "section": "LABOUR",
+    "code": "0114",
+    "desc": "Beldar",
+    "unit": "day",
+    "qty": 1.0,
+    "rate": 736.0,
+    "amount": 736.0
+   },
+   {
+    "section": "SUNDRY",
+    "code": "9999",
+    "desc": "Sundries and binding wire",
+    "unit": "L.S.",
+    "qty": 26.91,
+    "rate": 2.27,
+    "amount": 61.09
+   }
+  ],
+  "notes": []
+ },
+ "A04": {
+  "dar_item": "4.3.3",
+  "page_printed": 170,
+  "basis": {
+   "qty": 45.0,
+   "unit": "sqm"
+  },
+  "final_rate_per_basis_unit": 961.3,
+  "resources": [
+   {
+    "section": "MATERIAL",
+    "code": "7331",
+    "desc": "Wall form panel 1250x450 mm",
+    "unit": "each",
+    "qty": 1.7,
+    "rate": 900.0,
+    "amount": 1530.0
+   },
+   {
+    "section": "MATERIAL",
+    "code": "7332",
+    "desc": "Corner angle 45x45x5 m 2.50 m long",
+    "unit": "each",
+    "qty": 0.85,
+    "rate": 275.0,
+    "amount": 233.75
+   },
+   {
+    "section": "MATERIAL",
+    "code": "7333",
+    "desc": "Column clamp 450x1070 m",
+    "unit": "each",
+    "qty": 1.063,
+    "rate": 1020.0,
+    "amount": 1084.26
+   },
+   {
+    "section": "MATERIAL",
+    "code": "7334",
+    "desc": "Prop 2 m ( 2-3.5m)",
+    "unit": "each",
+    "qty": 0.85,
+    "rate": 690.0,
+    "amount": 586.5
+   },
+   {
+    "section": "SUNDRY",
+    "code": "9999",
+    "desc": "Assembly nut & bolt",
+    "unit": "L.S.",
+    "qty": 276.2,
+    "rate": 2.27,
+    "amount": 626.97
+   },
+   {
+    "section": "MATERIAL",
+    "code": "9977",
+    "desc": "Carriage",
+    "unit": "L.S.",
+    "qty": 520.0,
+    "rate": 2.27,
+    "amount": 1180.4
+   },
+   {
+    "section": "LABOUR",
+    "code": "0116",
+    "desc": "Fitter (grade 1)",
+    "unit": "day",
+    "qty": 10.0,
+    "rate": 897.0,
+    "amount": 8970.0
+   },
+   {
+    "section": "LABOUR",
+    "code": "0114",
+    "desc": "Beldar",
+    "unit": "day",
+    "qty": 20.0,
+    "rate": 736.0,
+    "amount": 14720.0
+   },
+   {
+    "section": "SUNDRY",
+    "code": "9999",
+    "desc": "Shuttering oil",
+    "unit": "L.S.",
+    "qty": 390.0,
+    "rate": 2.27,
+    "amount": 885.3
+   },
+   {
+    "section": "MATERIAL",
+    "code": "9977",
+    "desc": "Carriage",
+    "unit": "L.S.",
+    "qty": 260.0,
+    "rate": 2.27,
+    "amount": 590.2
+   }
+  ],
+  "notes": [
+   "Size of column 450x450mm and 2.5m high",
+   "Area of contact = 10x4x0.45x2.5 = 45 sqm."
+  ]
+ },
+ "A05": {
+  "dar_item": "5.33.1.2",
+  "page_printed": 275,
+  "basis": {
+   "qty": 1.0,
+   "unit": "cum"
+  },
+  "final_rate_per_basis_unit": 9655.7,
+  "resources": [
+   {
+    "section": "MATERIAL",
+    "code": "0295",
+    "desc": "Stone Aggregate (Single size) : 20 mm nom\u00ad inal size",
+    "unit": "cum",
+    "qty": 0.57,
+    "rate": 1425.0,
+    "amount": 812.25
+   },
+   {
+    "section": "MATERIAL",
+    "code": "0297",
+    "desc": "Stone Aggregate (Single size) : 10 mm nom\u00ad inal size",
+    "unit": "cum",
+    "qty": 0.28,
+    "rate": 1400.0,
+    "amount": 392.0
+   },
+   {
+    "section": "MATERIAL",
+    "code": "0982",
+    "desc": "Coarse sand (zone III)",
+    "unit": "cum",
+    "qty": 0.425,
+    "rate": 1450.0,
+    "amount": 616.25
+   },
+   {
+    "section": "MATERIAL",
+    "code": "0367",
+    "desc": "Ordinary/Pozzolana/Slag Cement",
+    "unit": "tonne",
+    "qty": 0.35,
+    "rate": 5156.0,
+    "amount": 1804.6
+   },
+   {
+    "section": "MATERIAL",
+    "code": "7318",
+    "desc": "Plasticizer / super plasticizer(0.50% of ce\u00ad ment) kilo\u00ad",
+    "unit": "gram",
+    "qty": 1.75,
+    "rate": 30.0,
+    "amount": 52.5
+   },
+   {
+    "section": "MACHINERY",
+    "code": "0004",
+    "desc": "Production cost of concrete by batch mix plant / ready mixed plant.",
+    "unit": "cum",
+    "qty": 1.0,
+    "rate": 450.0,
+    "amount": 450.0
+   },
+   {
+    "section": "MACHINERY",
+    "code": "0009",
+    "desc": "Pumping charges of concrete including hire charges of pump, carriage charges for all leads,piping work & accessories etc.",
+    "unit": "cum",
+    "qty": 1.0,
+    "rate": 250.0,
+    "amount": 250.0
+   },
+   {
+    "section": "LABOUR",
+    "code": "0155",
+    "desc": "Mason (average)",
+    "unit": "day",
+    "qty": 0.17,
+    "rate": 857.0,
+    "amount": 145.69
+   },
+   {
+    "section": "LABOUR",
+    "code": "0114",
+    "desc": "Beldar",
+    "unit": "day",
+    "qty": 2.0,
+    "rate": 736.0,
+    "amount": 1472.0
+   },
+   {
+    "section": "LABOUR",
+    "code": "0101",
+    "desc": "Bhisti",
+    "unit": "day",
+    "qty": 0.9,
+    "rate": 816.0,
+    "amount": 734.4
+   },
+   {
+    "section": "MACHINERY",
+    "code": "0012",
+    "desc": "Vibrator(Needle type 40mm)",
+    "unit": "day",
+    "qty": 0.07,
+    "rate": 400.0,
+    "amount": 28.0
+   },
+   {
+    "section": "SUNDRY",
+    "code": "9999",
+    "desc": "Sundries",
+    "unit": "L.S.",
+    "qty": 13.0,
+    "rate": 2.27,
+    "amount": 29.51
+   }
+  ],
+  "notes": []
+ },
+ "A06": {
+  "dar_item": "5.33.1.2",
+  "page_printed": 275,
+  "basis": {
+   "qty": 1.0,
+   "unit": "cum"
+  },
+  "final_rate_per_basis_unit": 9655.7,
+  "resources": [
+   {
+    "section": "MATERIAL",
+    "code": "0295",
+    "desc": "Stone Aggregate (Single size) : 20 mm nom\u00ad inal size",
+    "unit": "cum",
+    "qty": 0.57,
+    "rate": 1425.0,
+    "amount": 812.25
+   },
+   {
+    "section": "MATERIAL",
+    "code": "0297",
+    "desc": "Stone Aggregate (Single size) : 10 mm nom\u00ad inal size",
+    "unit": "cum",
+    "qty": 0.28,
+    "rate": 1400.0,
+    "amount": 392.0
+   },
+   {
+    "section": "MATERIAL",
+    "code": "0982",
+    "desc": "Coarse sand (zone III)",
+    "unit": "cum",
+    "qty": 0.425,
+    "rate": 1450.0,
+    "amount": 616.25
+   },
+   {
+    "section": "MATERIAL",
+    "code": "0367",
+    "desc": "Ordinary/Pozzolana/Slag Cement",
+    "unit": "tonne",
+    "qty": 0.35,
+    "rate": 5156.0,
+    "amount": 1804.6
+   },
+   {
+    "section": "MATERIAL",
+    "code": "7318",
+    "desc": "Plasticizer / super plasticizer(0.50% of ce\u00ad ment) kilo\u00ad",
+    "unit": "gram",
+    "qty": 1.75,
+    "rate": 30.0,
+    "amount": 52.5
+   },
+   {
+    "section": "MACHINERY",
+    "code": "0004",
+    "desc": "Production cost of concrete by batch mix plant / ready mixed plant.",
+    "unit": "cum",
+    "qty": 1.0,
+    "rate": 450.0,
+    "amount": 450.0
+   },
+   {
+    "section": "MACHINERY",
+    "code": "0009",
+    "desc": "Pumping charges of concrete including hire charges of pump, carriage charges for all leads,piping work & accessories etc.",
+    "unit": "cum",
+    "qty": 1.0,
+    "rate": 250.0,
+    "amount": 250.0
+   },
+   {
+    "section": "LABOUR",
+    "code": "0155",
+    "desc": "Mason (average)",
+    "unit": "day",
+    "qty": 0.17,
+    "rate": 857.0,
+    "amount": 145.69
+   },
+   {
+    "section": "LABOUR",
+    "code": "0114",
+    "desc": "Beldar",
+    "unit": "day",
+    "qty": 2.0,
+    "rate": 736.0,
+    "amount": 1472.0
+   },
+   {
+    "section": "LABOUR",
+    "code": "0101",
+    "desc": "Bhisti",
+    "unit": "day",
+    "qty": 0.9,
+    "rate": 816.0,
+    "amount": 734.4
+   },
+   {
+    "section": "MACHINERY",
+    "code": "0012",
+    "desc": "Vibrator(Needle type 40mm)",
+    "unit": "day",
+    "qty": 0.07,
+    "rate": 400.0,
+    "amount": 28.0
+   },
+   {
+    "section": "SUNDRY",
+    "code": "9999",
+    "desc": "Sundries",
+    "unit": "L.S.",
+    "qty": 13.0,
+    "rate": 2.27,
+    "amount": 29.51
+   }
+  ],
+  "notes": []
+ },
+ "A07": {
+  "dar_item": "2.25",
+  "page_printed": 127,
+  "basis": {
+   "qty": 10.0,
+   "unit": "cum"
+  },
+  "final_rate_per_basis_unit": 196.0,
+  "resources": [
+   {
+    "section": "LABOUR",
+    "code": "0114",
+    "desc": "Beldar",
+    "unit": "day",
+    "qty": 0.45,
+    "rate": 736.0,
+    "amount": 331.2
+   },
+   {
+    "section": "LABOUR",
+    "code": "0115",
+    "desc": "Coolie",
+    "unit": "day",
+    "qty": 1.208,
+    "rate": 736.0,
+    "amount": 889.09
+   },
+   {
+    "section": "LABOUR",
+    "code": "0101",
+    "desc": "Bhisti",
+    "unit": "day",
+    "qty": 0.18,
+    "rate": 816.0,
+    "amount": 146.88
+   },
+   {
+    "section": "SUNDRY",
+    "code": "9999",
+    "desc": "Sundries (Minor T&P)",
+    "unit": "L.S.",
+    "qty": 4.61,
+    "rate": 2.27,
+    "amount": 10.46
+   }
+  ],
+  "notes": []
+ },
+ "A08": {
+  "dar_item": "23.5",
+  "vol": 2,
+  "page_printed": null,
+  "basis": {
+   "qty": 1.0,
+   "unit": "cum"
+  },
+  "final_rate_per_unit": 1509.8,
+  "resources": [
+   {
+    "section": "MATERIAL",
+    "code": "7753",
+    "desc": "Boulder 50 mm to 200 mm",
+    "unit": "cum",
+    "qty": 1.0,
+    "rate": 875.0,
+    "amount": 875.0
+   },
+   {
+    "section": "LABOUR",
+    "code": "0114",
+    "desc": "Beldar",
+    "unit": "day",
+    "qty": 0.25,
+    "rate": 736.0,
+    "amount": 184.0
+   },
+   {
+    "section": "SUNDRY",
+    "code": "9999",
+    "desc": "Sundries",
+    "unit": "L.S.",
+    "qty": 1.0,
+    "rate": 2.27,
+    "amount": 2.27
+   }
+  ],
+  "notes": []
+ },
+ "A09": {
+  "dar_item": "23.6",
+  "vol": 2,
+  "page_printed": null,
+  "basis": {
+   "qty": 1.0,
+   "unit": "cum"
+  },
+  "final_rate_per_unit": 1538.25,
+  "resources": [
+   {
+    "section": "MATERIAL",
+    "code": "7754",
+    "desc": "Gravel 5 mm to 10 mm",
+    "unit": "cum",
+    "qty": 1.0,
+    "rate": 895.0,
+    "amount": 895.0
+   },
+   {
+    "section": "LABOUR",
+    "code": "0114",
+    "desc": "Beldar",
+    "unit": "day",
+    "qty": 0.25,
+    "rate": 736.0,
+    "amount": 184.0
+   },
+   {
+    "section": "SUNDRY",
+    "code": "9999",
+    "desc": "Sundries",
+    "unit": "L.S.",
+    "qty": 1.0,
+    "rate": 2.27,
+    "amount": 2.27
+   }
+  ],
+  "notes": []
+ },
+ "A10": {
+  "dar_item": "23.7",
+  "vol": 2,
+  "page_printed": null,
+  "basis": {
+   "qty": 1.0,
+   "unit": "cum"
+  },
+  "final_rate_per_unit": 1538.25,
+  "resources": [
+   {
+    "section": "MATERIAL",
+    "code": "7755",
+    "desc": "Gravel 1.5 mm to 2 mm",
+    "unit": "cum",
+    "qty": 1.0,
+    "rate": 895.0,
+    "amount": 895.0
+   },
+   {
+    "section": "LABOUR",
+    "code": "0114",
+    "desc": "Beldar",
+    "unit": "day",
+    "qty": 0.25,
+    "rate": 736.0,
+    "amount": 184.0
+   },
+   {
+    "section": "SUNDRY",
+    "code": "9999",
+    "desc": "Sundries",
+    "unit": "L.S.",
+    "qty": 1.0,
+    "rate": 2.27,
+    "amount": 2.27
+   }
+  ],
+  "notes": []
+ },
+ "A11": {
+  "dar_item": "23.1.1.3",
+  "vol": 2,
+  "page_printed": null,
+  "basis": {
+   "qty": 25.0,
+   "unit": "metre"
+  },
+  "final_rate_per_unit": 990.8,
+  "resources": [
+   {
+    "section": "MACHINERY",
+    "code": "0020",
+    "desc": "Hydraulic Excavator (3D) with driver and fuel.",
+    "unit": "day",
+    "qty": 1.0,
+    "rate": 7850.0,
+    "amount": 7850.0
+   },
+   {
+    "section": "MACHINERY",
+    "code": "0005",
+    "desc": "Hire charges of Diesel Truck - 9 tonne",
+    "unit": "day",
+    "qty": 0.429,
+    "rate": 4400.0,
+    "amount": 1887.6
+   },
+   {
+    "section": "LABOUR",
+    "code": "0114",
+    "desc": "Beldar",
+    "unit": "day",
+    "qty": 4.0,
+    "rate": 736.0,
+    "amount": 2944.0
+   },
+   {
+    "section": "LABOUR",
+    "code": "0130",
+    "desc": "Mistry",
+    "unit": "day",
+    "qty": 1.0,
+    "rate": 897.0,
+    "amount": 897.0
+   },
+   {
+    "section": "MATERIAL",
+    "code": "7763",
+    "desc": "Water supply tanker of 5000 litre capacity",
+    "unit": "each",
+    "qty": 1.0,
+    "rate": 1625.0,
+    "amount": 1625.0
+   },
+   {
+    "section": "LABOUR",
+    "code": "0114",
+    "desc": "Beldar",
+    "unit": "day",
+    "qty": 2.0,
+    "rate": 736.0,
+    "amount": 1472.0
+   },
+   {
+    "section": "LABOUR",
+    "code": "0113",
+    "desc": "Chowkidar",
+    "unit": "day",
+    "qty": 1.0,
+    "rate": 736.0,
+    "amount": 736.0
+   }
+  ],
+  "notes": [
+   "MACHINERY :",
+   "Transportation charges for to and fro to site",
+   "(assume 140m of bore for one shifting) (2",
+   "x30)/140",
+   "Loading, unloading &Errection charges of drill\u00ad",
+   "ing Rig Machine"
+  ]
+ },
+ "A12": {
+  "dar_item": "23.4.3",
+  "vol": 2,
+  "page_printed": null,
+  "basis": {
+   "qty": 100.0,
+   "unit": "metres"
+  },
+  "final_rate_per_unit": 1255.7,
+  "resources": [
+   {
+    "section": "MATERIAL",
+    "code": "7752",
+    "desc": "uPVC slotted pipe 200 mm dia as per IS: 12818",
+    "unit": "metre",
+    "qty": 100.0,
+    "rate": 875.0,
+    "amount": 87500.0
+   },
+   {
+    "section": "LABOUR",
+    "code": "0114",
+    "desc": "Beldar",
+    "unit": "day",
+    "qty": 0.5,
+    "rate": 736.0,
+    "amount": 368.0
+   },
+   {
+    "section": "LABOUR",
+    "code": "0115",
+    "desc": "Coolie",
+    "unit": "day",
+    "qty": 0.5,
+    "rate": 736.0,
+    "amount": 368.0
+   },
+   {
+    "section": "SUNDRY",
+    "code": "9999",
+    "desc": "Sundries (Adhesive etc.)",
+    "unit": "L.S.",
+    "qty": 13.42,
+    "rate": 2.27,
+    "amount": 30.46
+   }
+  ],
+  "notes": []
+ },
+ "A13": {
+  "dar_item": "23.8",
+  "vol": 2,
+  "page_printed": null,
+  "basis": {
+   "qty": 1.0,
+   "unit": "cum"
+  },
+  "final_rate_per_unit": 2024.5,
+  "resources": [
+   {
+    "section": "MATERIAL",
+    "code": "7772",
+    "desc": "Pea Gravel",
+    "unit": "cum",
+    "qty": 1.0,
+    "rate": 1200.0,
+    "amount": 1200.0
+   },
+   {
+    "section": "LABOUR",
+    "code": "0114",
+    "desc": "Beldar",
+    "unit": "day",
+    "qty": 0.3,
+    "rate": 736.0,
+    "amount": 220.8
+   },
+   {
+    "section": "SUNDRY",
+    "code": "9999",
+    "desc": "Sundries",
+    "unit": "L.S.",
+    "qty": 1.0,
+    "rate": 2.27,
+    "amount": 2.27
+   }
+  ],
+  "notes": []
+ },
+ "A14": {
+  "dar_item": "23.12",
+  "vol": 2,
+  "page_printed": null,
+  "basis": {
+   "qty": 8.0,
+   "unit": "Hours"
+  },
+  "final_rate_per_unit": 1085.05,
+  "resources": [
+   {
+    "section": "MACHINERY",
+    "code": "0040",
+    "desc": "Air compressor 250 cfm with two leads for pneu\u00ad matic cutters/ hammers.",
+    "unit": "day",
+    "qty": 1.0,
+    "rate": 1800.0,
+    "amount": 1800.0
+   },
+   {
+    "section": "MATERIAL",
+    "code": "1235",
+    "desc": "Diesel oil",
+    "unit": "litre",
+    "qty": 48.0,
+    "rate": 89.62,
+    "amount": 4301.76
+   }
+  ],
+  "notes": [
+   "MACHINERY :"
+  ]
+ },
+ "A15": {
+  "dar_item": "19.15.1",
+  "vol": 2,
+  "match": "direct match: MS foot rest, 20 mm sq bar",
+  "basis": {
+   "qty": 1.0,
+   "unit": "M.S foot rests"
+  },
+  "final_rate_per_unit": 544.7,
+  "resources": [
+   {
+    "section": "MATERIAL",
+    "code": "1006",
+    "desc": "Mild steel square bars",
+    "unit": "quintal",
+    "qty": 0.024,
+    "rate": 5500.0,
+    "amount": 132.0
+   },
+   {
+    "section": "MATERIAL",
+    "code": "9988",
+    "desc": "Carriage, painting, and other sundries",
+    "unit": "L.S.",
+    "qty": 1.82,
+    "rate": 2.27,
+    "amount": 4.13
+   },
+   {
+    "section": "LABOUR",
+    "code": "0103",
+    "desc": "Blacksmith 2nd class",
+    "unit": "day",
+    "qty": 0.1,
+    "rate": 816.0,
+    "amount": 81.6
+   },
+   {
+    "section": "LABOUR",
+    "code": "0114",
+    "desc": "Beldar",
+    "unit": "day",
+    "qty": 0.1,
+    "rate": 736.0,
+    "amount": 73.6
+   },
+   {
+    "section": "LABOUR",
+    "code": "0123",
+    "desc": "Mason 1st class",
+    "unit": "day",
+    "qty": 0.02,
+    "rate": 897.0,
+    "amount": 17.94
+   },
+   {
+    "section": "LABOUR",
+    "code": "0124",
+    "desc": "Mason 2nd class",
+    "unit": "day",
+    "qty": 0.02,
+    "rate": 816.0,
+    "amount": 16.32
+   },
+   {
+    "section": "LABOUR",
+    "code": "0114",
+    "desc": "Beldar",
+    "unit": "day",
+    "qty": 0.05,
+    "rate": 736.0,
+    "amount": 36.8
+   }
+  ],
+  "notes": []
+ },
+ "A16": {
+  "dar_item": "17.35.1.2",
+  "vol": 2,
+  "match": "PROXY: soil/waste/vent pipe fixing with joints (cast iron; no PVC 160mm vent item in DAR)",
+  "basis": {
+   "qty": 16.87,
+   "unit": "m"
+  },
+  "final_rate_per_unit": 1180.75,
+  "resources": [
+   {
+    "section": "MATERIAL",
+    "code": "3620",
+    "desc": "C.C.I.(spun) socketed soil, waste and vent pipe 1.80 metres long:100mm dia",
+    "unit": "each",
+    "qty": 10.5,
+    "rate": 1194.0,
+    "amount": 12537.0
+   },
+   {
+    "section": "SUNDRY",
+    "code": "9999",
+    "desc": "Scaffolding",
+    "unit": "L.S.",
+    "qty": 80.73,
+    "rate": 2.27,
+    "amount": 183.26
+   },
+   {
+    "section": "MATERIAL",
+    "code": "9977",
+    "desc": "Carriage of materials",
+    "unit": "L.S.",
+    "qty": 53.82,
+    "rate": 2.27,
+    "amount": 122.17
+   },
+   {
+    "section": "LABOUR",
+    "code": "0116",
+    "desc": "Fitter (grade 1)",
+    "unit": "day",
+    "qty": 0.42,
+    "rate": 897.0,
+    "amount": 376.74
+   },
+   {
+    "section": "LABOUR",
+    "code": "0100",
+    "desc": "Bandhani",
+    "unit": "day",
+    "qty": 0.21,
+    "rate": 816.0,
+    "amount": 171.36
+   },
+   {
+    "section": "LABOUR",
+    "code": "0114",
+    "desc": "Beldar",
+    "unit": "day",
+    "qty": 0.83,
+    "rate": 736.0,
+    "amount": 610.88
+   }
+  ],
+  "notes": [
+   "(1.75mx10)-(9x0.07m) = 16.87 m"
+  ]
+ },
+ "A17": {
+  "dar_item": "19.18.3",
+  "vol": 2,
+  "match": "PROXY: cover fixing labour (19.19.1.1 precast RCC cover has no labour lines)",
+  "basis": {
+   "qty": 1.0,
+   "unit": "cover"
+  },
+  "final_rate_per_unit": 7575.4,
+  "resources": [
+   {
+    "section": "MATERIAL",
+    "code": "3861",
+    "desc": "560 mm dia cover without frame (Heavy duty)",
+    "unit": "each",
+    "qty": 1.0,
+    "rate": 5200.0,
+    "amount": 5200.0
+   },
+   {
+    "section": "MATERIAL",
+    "code": "9977",
+    "desc": "Carriage of C.I. cover",
+    "unit": "L.S.",
+    "qty": 16.12,
+    "rate": 2.27,
+    "amount": 36.59
+   },
+   {
+    "section": "LABOUR",
+    "code": "0114",
+    "desc": "Beldar",
+    "unit": "day",
+    "qty": 0.12,
+    "rate": 736.0,
+    "amount": 88.32
+   }
+  ],
+  "notes": []
+ },
+ "A18": {
+  "dar_item": "19.18.3",
+  "vol": 2,
+  "match": "PROXY: heavy-duty cover fixing; no MS cover item in DAR",
+  "basis": {
+   "qty": 1.0,
+   "unit": "cover"
+  },
+  "final_rate_per_unit": 7575.4,
+  "resources": [
+   {
+    "section": "MATERIAL",
+    "code": "3861",
+    "desc": "560 mm dia cover without frame (Heavy duty)",
+    "unit": "each",
+    "qty": 1.0,
+    "rate": 5200.0,
+    "amount": 5200.0
+   },
+   {
+    "section": "MATERIAL",
+    "code": "9977",
+    "desc": "Carriage of C.I. cover",
+    "unit": "L.S.",
+    "qty": 16.12,
+    "rate": 2.27,
+    "amount": 36.59
+   },
+   {
+    "section": "LABOUR",
+    "code": "0114",
+    "desc": "Beldar",
+    "unit": "day",
+    "qty": 0.12,
+    "rate": 736.0,
+    "amount": 88.32
+   }
+  ],
+  "notes": []
+ }
+}

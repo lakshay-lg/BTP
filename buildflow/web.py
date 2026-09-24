@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import json
 from collections import OrderedDict
 from pathlib import Path
 from threading import Lock
@@ -8,12 +9,15 @@ from flask import Flask, jsonify, render_template, request, send_file
 from io import BytesIO
 
 from .agent import ProjectAgent
+from .costs import CostError
+from .cpm import CpmError
 from .exporter import export_xlsx
 from .ingestion import read_boq
 from .models import AnalysisResult, config_from_dict
 from .normalization import review_document
 from .normalization_schema import SCHEMA, MAX_JSON_BYTES
 from .normalized_analysis import ReviewBlocked, analyze_reviewed
+from .pipeline import run_pipeline
 from .resolutions import review_input
 from .review_schema import MAX_REVIEW_BYTES
 
@@ -105,6 +109,46 @@ def create_app() -> Flask:
             return jsonify(error=str(exc)),422
         except (ValueError, TypeError) as exc:
             return jsonify(error=str(exc)),400
+
+    @app.get("/schedule")
+    def schedule_page():
+        return render_template("schedule.html")
+
+    def _schedule_response(data, body):
+        try:
+            result, report = run_pipeline(
+                data, body.get("start_date") or "2026-10-01",
+                overrides=body.get("overrides") or {},
+                workweek_days=int(body.get("workweek_days") or 6),
+                holidays=body.get("holidays") or [],
+                cashflow=body.get("cashflow") or None)
+        except (CpmError, CostError, ValueError, KeyError, TypeError) as exc:
+            return jsonify(error=str(exc)), 400
+        result["_reports"] = report
+        return jsonify(result)
+
+    @app.get("/api/schedule/demo")
+    def schedule_demo():
+        data = json.loads((ROOT / "data" / "rwh_activities.json").read_text())
+        return _schedule_response(data, {"start_date": request.args.get("start")})
+
+    @app.get("/api/schedule/demo-input")
+    def schedule_demo_input():
+        return jsonify(json.loads((ROOT / "data" / "rwh_activities.json").read_text()))
+
+    @app.get("/api/schedule/demo-two-tank")
+    def schedule_demo_two_tank():
+        return jsonify({
+            "input": json.loads((ROOT / "data" / "rwh_two_tank_activities.json").read_text()),
+            "overrides": json.loads((ROOT / "data" / "rwh_gang_overrides.json").read_text()),
+            "start_date": "2026-04-25"})
+
+    @app.post("/api/schedule/run")
+    def schedule_run():
+        body = request.get_json(silent=True) or {}
+        if "activities_json" not in body:
+            return jsonify(error="send {\"activities_json\": <precedence JSON>, \"start_date\": ...}"), 400
+        return _schedule_response(body["activities_json"], body)
 
     @app.get("/api/health")
     def health():

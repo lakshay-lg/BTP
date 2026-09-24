@@ -1,0 +1,2182 @@
+{
+  "project": "RWH Tank, Narsi Village Phase 1, Kosi Kalan, Mathura (two tanks)",
+  "project_type": "RAIN_WATER_HARVESTING",
+  "_note": "Rates for A01-A15 are CPWD DAR 2023 (Delhi, April 2023) final rates per unit, which include 18% GST, 15% contractor profit and overheads and 1% cess; A16-A18 have no DAR match and remain placeholder estimates. Replace with awarded BOQ rates when available. Two-tank network built by scripts/build_two_tank_rwh.py: mobilisation, curing and testing added; G-row quantities not doubled in the BOQ are used per tank here.",
+  "activities": [
+    {
+      "activity_id": "MOB",
+      "activity_class": "MOBILISATION",
+      "description": "Mobilization & site setup",
+      "quantity": 1,
+      "unit": "LS",
+      "rate": 150000,
+      "fixed_days": 6,
+      "predecessors": [],
+      "rate_basis": "original_workbook",
+      "rate_source": "lump sum from the original cash-flow sheet",
+      "productivity": null,
+      "derived": null,
+      "duration_days": 6,
+      "gangs_used": null,
+      "duration_basis": "fixed",
+      "ES": 0,
+      "EF": 6,
+      "LS": 0,
+      "LF": 6,
+      "total_float": 0,
+      "free_float": 0,
+      "critical": true,
+      "start_date": "2026-04-25",
+      "end_date": "2026-05-01",
+      "cost": 150000.0,
+      "monthly_cost": {
+        "2026-04": 125000.0,
+        "2026-05": 25000.0
+      }
+    },
+    {
+      "activity_class": "EXCAVATION_MECHANICAL",
+      "description": "Tank 1: Earth work in excavation, all kinds of soil",
+      "quantity": 1027.6,
+      "unit": "cum",
+      "rate": 177.5,
+      "rate_placeholder_was": 180,
+      "rate_basis": "dar_2023",
+      "rate_source": "DAR V1 2.6.1",
+      "activity_id": "T1_A01",
+      "predecessors": [
+        "MOB"
+      ],
+      "productivity": {
+        "source": "DAR V1 2.6.1",
+        "match_quality": "exact",
+        "unit": "cum",
+        "coefficients_days_per_unit": {
+          "excavator": 0.008,
+          "loader": 0.008,
+          "mate": 0.004,
+          "coolie": 0.006
+        },
+        "default_gang": {
+          "excavator": 1,
+          "loader": 1,
+          "mate": 1,
+          "coolie": 1
+        },
+        "output_per_gang_day": 125.0,
+        "note": "Coefficients are per 10 cum in DAR (0.08 machine-day). DAR text also says 30 cum/hr, which does not agree with 0.08 day/10 cum; coefficient used."
+      },
+      "derived": {
+        "resource_days": {
+          "excavator": 8.22,
+          "loader": 8.22,
+          "mate": 4.11,
+          "coolie": 6.17
+        },
+        "limiting_resource": "excavator"
+      },
+      "duration_days": 9,
+      "gangs_used": 1,
+      "duration_basis": "computed",
+      "ES": 6,
+      "EF": 15,
+      "LS": 6,
+      "LF": 15,
+      "total_float": 0,
+      "free_float": 0,
+      "critical": true,
+      "start_date": "2026-05-02",
+      "end_date": "2026-05-12",
+      "cost": 182399.0,
+      "monthly_cost": {
+        "2026-05": 182399.0
+      }
+    },
+    {
+      "activity_class": "PCC_LEAN",
+      "description": "Tank 1: PCC 1:4:8 up to plinth",
+      "quantity": 10.65,
+      "unit": "cum",
+      "rate": 6812.0,
+      "rate_placeholder_was": 5500,
+      "rate_basis": "dar_2023",
+      "rate_source": "DAR V1 4.1.8",
+      "activity_id": "T1_A02",
+      "predecessors": [
+        "T1_A01"
+      ],
+      "productivity": {
+        "source": "DAR V1 4.1.8 = IS 7272 ii(d)(2)",
+        "match_quality": "exact",
+        "unit": "cum",
+        "coefficients_days_per_unit": {
+          "mason": 0.1,
+          "beldar": 1.63,
+          "bhisti": 0.7,
+          "mixer": 0.07,
+          "vibrator": 0.07
+        },
+        "default_gang": {
+          "mason": 1,
+          "beldar": 7,
+          "bhisti": 3,
+          "mixer": 1,
+          "vibrator": 1
+        },
+        "output_per_gang_day": 4.29,
+        "note": ""
+      },
+      "derived": {
+        "resource_days": {
+          "mason": 1.07,
+          "beldar": 17.36,
+          "bhisti": 7.46,
+          "mixer": 0.75,
+          "vibrator": 0.75
+        },
+        "limiting_resource": "bhisti"
+      },
+      "duration_days": 2,
+      "gangs_used": 2,
+      "duration_basis": "computed",
+      "ES": 15,
+      "EF": 17,
+      "LS": 15,
+      "LF": 17,
+      "total_float": 0,
+      "free_float": 0,
+      "critical": true,
+      "start_date": "2026-05-13",
+      "end_date": "2026-05-14",
+      "cost": 72547.8,
+      "monthly_cost": {
+        "2026-05": 72547.8
+      }
+    },
+    {
+      "activity_class": "STEEL_REINFORCEMENT",
+      "description": "Tank 1: TMT Fe-550D reinforcement up to plinth",
+      "quantity": 14840.57,
+      "unit": "kg",
+      "rate": 107.85,
+      "rate_placeholder_was": 72,
+      "rate_basis": "dar_2023_near",
+      "rate_source": "DAR V1 5.22.6 (DAR grade is Fe-500D, BOQ says Fe-550D)",
+      "activity_id": "T1_A03",
+      "predecessors": [
+        "T1_A02"
+      ],
+      "productivity": {
+        "source": "DAR V1 5.22.6 = IS 7272 vi",
+        "match_quality": "exact",
+        "unit": "kg",
+        "coefficients_days_per_unit": {
+          "bar_bender": 0.01,
+          "beldar": 0.01
+        },
+        "default_gang": {
+          "bar_bender": 5,
+          "beldar": 5
+        },
+        "output_per_gang_day": 500.0,
+        "note": "1 quintal (100 kg) per bar-bender + mazdoor pair per day. DAR grade is Fe-500D; BOQ says Fe-550D."
+      },
+      "derived": {
+        "resource_days": {
+          "bar_bender": 148.41,
+          "beldar": 148.41
+        },
+        "limiting_resource": "bar_bender"
+      },
+      "duration_days": 10,
+      "gangs_used": 3,
+      "duration_basis": "computed",
+      "ES": 17,
+      "EF": 27,
+      "LS": 21,
+      "LF": 31,
+      "total_float": 4,
+      "free_float": 0,
+      "critical": false,
+      "start_date": "2026-05-15",
+      "end_date": "2026-05-26",
+      "cost": 1600555.47,
+      "monthly_cost": {
+        "2026-05": 1600555.47
+      }
+    },
+    {
+      "activity_class": "SHUTTERING_FOUNDATION",
+      "description": "Tank 1: Centering & shuttering - footings, walls, column bases",
+      "quantity": 608.96,
+      "unit": "sqm",
+      "rate": 961.3,
+      "rate_placeholder_was": 520,
+      "rate_basis": "dar_2023",
+      "rate_source": "DAR V1 4.3.3",
+      "activity_id": "T1_A04",
+      "predecessors": [
+        "T1_A02"
+      ],
+      "productivity": {
+        "source": "DAR V1 4.3.3 (IS 7272 v(a) as cross-check)",
+        "match_quality": "exact",
+        "unit": "sqm",
+        "coefficients_days_per_unit": {
+          "fitter": 0.22222,
+          "beldar": 0.44444
+        },
+        "default_gang": {
+          "fitter": 2,
+          "beldar": 4
+        },
+        "output_per_gang_day": 9.0,
+        "note": "DAR item is a steel-panel system. IS 7272 wooden formwork gives carpenter 0.25 + mazdoor 0.20 per sqm."
+      },
+      "derived": {
+        "resource_days": {
+          "fitter": 135.32,
+          "beldar": 270.65
+        },
+        "limiting_resource": "fitter"
+      },
+      "duration_days": 12,
+      "gangs_used": 6,
+      "duration_basis": "computed",
+      "ES": 17,
+      "EF": 29,
+      "LS": 17,
+      "LF": 29,
+      "total_float": 0,
+      "free_float": 0,
+      "critical": true,
+      "start_date": "2026-05-15",
+      "end_date": "2026-05-28",
+      "cost": 585393.25,
+      "monthly_cost": {
+        "2026-05": 585393.25
+      }
+    },
+    {
+      "activity_class": "RCC_FOOTING",
+      "description": "Tank 1: M30 RMC concrete in foundation/footing",
+      "quantity": 50,
+      "unit": "cum",
+      "rate": 9655.7,
+      "rate_placeholder_was": 8500,
+      "rate_basis": "dar_2023",
+      "rate_source": "DAR V1 5.33.1.2",
+      "activity_id": "T1_A05",
+      "predecessors": [
+        "T1_A03",
+        "T1_A04"
+      ],
+      "productivity": {
+        "source": "DAR V1 5.33.1.2 = IS 7272 ii(f)",
+        "match_quality": "exact",
+        "unit": "cum",
+        "coefficients_days_per_unit": {
+          "mason": 0.17,
+          "beldar": 2.0,
+          "bhisti": 0.9,
+          "vibrator": 0.07
+        },
+        "default_gang": {
+          "mason": 1,
+          "beldar": 12,
+          "bhisti": 5,
+          "vibrator": 1
+        },
+        "output_per_gang_day": 5.56,
+        "note": "RMC production and pumping are plant services, not limiting."
+      },
+      "derived": {
+        "resource_days": {
+          "mason": 8.5,
+          "beldar": 100.0,
+          "bhisti": 45.0,
+          "vibrator": 3.5
+        },
+        "limiting_resource": "bhisti"
+      },
+      "duration_days": 3,
+      "gangs_used": 3,
+      "duration_basis": "computed",
+      "ES": 29,
+      "EF": 32,
+      "LS": 34,
+      "LF": 37,
+      "total_float": 5,
+      "free_float": 0,
+      "critical": false,
+      "start_date": "2026-05-29",
+      "end_date": "2026-06-01",
+      "cost": 482785.0,
+      "monthly_cost": {
+        "2026-05": 321856.67,
+        "2026-06": 160928.33
+      }
+    },
+    {
+      "activity_class": "RCC_SUPERSTRUCTURE",
+      "description": "Tank 1: M30 RMC concrete in walls/columns/beams/slab",
+      "quantity": 104.53,
+      "unit": "cum",
+      "rate": 9655.7,
+      "rate_placeholder_was": 9200,
+      "rate_basis": "dar_2023",
+      "rate_source": "DAR V1 5.33.1.2",
+      "activity_id": "T1_A06",
+      "predecessors": [
+        "T1_A05"
+      ],
+      "productivity": {
+        "source": "DAR V1 5.33.1.2 (IS 7272 ii(g),(k) is higher)",
+        "match_quality": "exact",
+        "unit": "cum",
+        "coefficients_days_per_unit": {
+          "mason": 0.17,
+          "beldar": 2.0,
+          "bhisti": 0.9,
+          "vibrator": 0.07
+        },
+        "default_gang": {
+          "mason": 1,
+          "beldar": 12,
+          "bhisti": 5,
+          "vibrator": 1
+        },
+        "output_per_gang_day": 5.56,
+        "note": "IS 7272 gives mazdoor 2.50 (slab) to 3.50 (columns), so this may be optimistic."
+      },
+      "derived": {
+        "resource_days": {
+          "mason": 17.77,
+          "beldar": 209.06,
+          "bhisti": 94.08,
+          "vibrator": 7.32
+        },
+        "limiting_resource": "bhisti"
+      },
+      "duration_days": 7,
+      "gangs_used": 3,
+      "duration_basis": "computed",
+      "ES": 32,
+      "EF": 39,
+      "LS": 37,
+      "LF": 44,
+      "total_float": 5,
+      "free_float": 0,
+      "critical": false,
+      "start_date": "2026-06-02",
+      "end_date": "2026-06-09",
+      "cost": 1009310.32,
+      "monthly_cost": {
+        "2026-06": 1009310.32
+      }
+    },
+    {
+      "activity_class": "BACKFILLING",
+      "description": "Tank 1: Filling available excavated earth in layers",
+      "quantity": 205.52,
+      "unit": "cum",
+      "rate": 196.0,
+      "rate_placeholder_was": 150,
+      "rate_basis": "dar_2023",
+      "rate_source": "DAR V1 2.25",
+      "activity_id": "T1_A07",
+      "predecessors": [
+        "T1_CUR"
+      ],
+      "productivity": {
+        "source": "IS 7272 i(f) as amended 1979 (+ i(e) for 50 m lead)",
+        "match_quality": "exact",
+        "unit": "cum",
+        "coefficients_days_per_unit": {
+          "mate": 0.03,
+          "mazdoor": 0.34,
+          "bhisti": 0.02
+        },
+        "default_gang": {
+          "mate": 2,
+          "mazdoor": 17,
+          "bhisti": 1
+        },
+        "output_per_gang_day": 50.0,
+        "note": "Amended: 0.22 mazdoor for 25 m lead + 0.12 per extra 25 m. DAR 2.25 gives about 0.18 labour-day/cum, but that parse looked unreliable."
+      },
+      "derived": {
+        "resource_days": {
+          "mate": 6.17,
+          "mazdoor": 69.88,
+          "bhisti": 4.11
+        },
+        "limiting_resource": "mazdoor"
+      },
+      "duration_days": 5,
+      "gangs_used": 1,
+      "duration_basis": "computed",
+      "ES": 46,
+      "EF": 51,
+      "LS": 58,
+      "LF": 63,
+      "total_float": 12,
+      "free_float": 0,
+      "critical": false,
+      "start_date": "2026-06-18",
+      "end_date": "2026-06-23",
+      "cost": 40281.92,
+      "monthly_cost": {
+        "2026-06": 40281.92
+      }
+    },
+    {
+      "activity_class": "GRAVEL_FILL_BOULDER",
+      "description": "Tank 1: Stone boulders 6-15 cm in recharge pit",
+      "quantity": 49.98,
+      "unit": "cum",
+      "rate": 1509.8,
+      "rate_placeholder_was": 1400,
+      "rate_basis": "dar_2023_near",
+      "rate_source": "DAR V2 23.5 (boulder size 5-20 cm vs BOQ 6-15 cm)",
+      "activity_id": "T1_A08",
+      "predecessors": [
+        "T1_A07"
+      ],
+      "productivity": {
+        "source": "DAR V2 23.5",
+        "match_quality": "near",
+        "unit": "cum",
+        "coefficients_days_per_unit": {
+          "beldar": 0.25
+        },
+        "default_gang": {
+          "beldar": 8
+        },
+        "output_per_gang_day": 32.0,
+        "note": "DAR boulder size 5-20 cm; BOQ 6-15 cm."
+      },
+      "derived": {
+        "resource_days": {
+          "beldar": 12.49
+        },
+        "limiting_resource": "beldar"
+      },
+      "duration_days": 2,
+      "gangs_used": 1,
+      "duration_basis": "computed",
+      "ES": 51,
+      "EF": 53,
+      "LS": 63,
+      "LF": 65,
+      "total_float": 12,
+      "free_float": 0,
+      "critical": false,
+      "start_date": "2026-06-24",
+      "end_date": "2026-06-25",
+      "cost": 75459.8,
+      "monthly_cost": {
+        "2026-06": 75459.8
+      }
+    },
+    {
+      "activity_class": "GRAVEL_FILL_GRAVEL",
+      "description": "Tank 1: Gravel 10-20 mm over boulders",
+      "quantity": 49.98,
+      "unit": "cum",
+      "rate": 1538.25,
+      "rate_placeholder_was": 1600,
+      "rate_basis": "dar_2023_near",
+      "rate_source": "DAR V2 23.6 (gravel 5-10 mm vs BOQ 10-20 mm)",
+      "activity_id": "T1_A09",
+      "predecessors": [
+        "T1_A08"
+      ],
+      "productivity": {
+        "source": "DAR V2 23.6",
+        "match_quality": "near",
+        "unit": "cum",
+        "coefficients_days_per_unit": {
+          "beldar": 0.25
+        },
+        "default_gang": {
+          "beldar": 8
+        },
+        "output_per_gang_day": 32.0,
+        "note": "DAR gravel 5-10 mm; BOQ 10-20 mm."
+      },
+      "derived": {
+        "resource_days": {
+          "beldar": 12.49
+        },
+        "limiting_resource": "beldar"
+      },
+      "duration_days": 2,
+      "gangs_used": 1,
+      "duration_basis": "computed",
+      "ES": 53,
+      "EF": 55,
+      "LS": 65,
+      "LF": 67,
+      "total_float": 12,
+      "free_float": 0,
+      "critical": false,
+      "start_date": "2026-06-26",
+      "end_date": "2026-06-27",
+      "cost": 76881.74,
+      "monthly_cost": {
+        "2026-06": 76881.74
+      }
+    },
+    {
+      "activity_class": "GRAVEL_FILL_SAND",
+      "description": "Tank 1: Coarse sand 1.5-3 mm over gravel",
+      "quantity": 49.98,
+      "unit": "cum",
+      "rate": 1538.25,
+      "rate_placeholder_was": 1300,
+      "rate_basis": "dar_2023_near",
+      "rate_source": "DAR V2 23.7 (sand 1.5-2 mm vs BOQ 1.5-3 mm)",
+      "activity_id": "T1_A10",
+      "predecessors": [
+        "T1_A09"
+      ],
+      "productivity": {
+        "source": "DAR V2 23.7",
+        "match_quality": "near",
+        "unit": "cum",
+        "coefficients_days_per_unit": {
+          "beldar": 0.25
+        },
+        "default_gang": {
+          "beldar": 8
+        },
+        "output_per_gang_day": 32.0,
+        "note": "DAR coarse sand 1.5-2 mm; BOQ 1.5-3 mm."
+      },
+      "derived": {
+        "resource_days": {
+          "beldar": 12.49
+        },
+        "limiting_resource": "beldar"
+      },
+      "duration_days": 2,
+      "gangs_used": 1,
+      "duration_basis": "computed",
+      "ES": 55,
+      "EF": 57,
+      "LS": 67,
+      "LF": 69,
+      "total_float": 12,
+      "free_float": 12,
+      "critical": false,
+      "start_date": "2026-06-29",
+      "end_date": "2026-06-30",
+      "cost": 76881.74,
+      "monthly_cost": {
+        "2026-06": 76881.74
+      }
+    },
+    {
+      "activity_class": "BOREWELL_DRILLING",
+      "description": "Tank 1: Drilling 400 mm dia bore, 0-30 m",
+      "quantity": 120,
+      "unit": "m",
+      "rate": 990.8,
+      "rate_placeholder_was": 1100,
+      "rate_basis": "dar_2023",
+      "rate_source": "DAR V2 23.1.1.3",
+      "activity_id": "T1_A11",
+      "predecessors": [
+        "T1_A02"
+      ],
+      "productivity": {
+        "source": "DAR V2 23.1.1.3",
+        "match_quality": "exact",
+        "unit": "m",
+        "coefficients_days_per_unit": {
+          "rig": 0.04,
+          "truck": 0.01716,
+          "beldar": 0.24,
+          "mistry": 0.04,
+          "chowkidar": 0.04
+        },
+        "default_gang": {
+          "rig": 1,
+          "truck": 1,
+          "beldar": 6,
+          "mistry": 1,
+          "chowkidar": 1
+        },
+        "output_per_gang_day": 25.0,
+        "note": "25 m per rig-day, including shifting; 400 mm dia, soil, up to 90 m."
+      },
+      "derived": {
+        "resource_days": {
+          "rig": 4.8,
+          "truck": 2.06,
+          "beldar": 28.8,
+          "mistry": 4.8,
+          "chowkidar": 4.8
+        },
+        "limiting_resource": "rig"
+      },
+      "duration_days": 5,
+      "gangs_used": 1,
+      "duration_basis": "computed",
+      "ES": 17,
+      "EF": 22,
+      "LS": 56,
+      "LF": 61,
+      "total_float": 39,
+      "free_float": 0,
+      "critical": false,
+      "start_date": "2026-05-15",
+      "end_date": "2026-05-20",
+      "cost": 118896.0,
+      "monthly_cost": {
+        "2026-05": 118896.0
+      }
+    },
+    {
+      "activity_class": "BOREWELL_PVC_SCREEN",
+      "description": "Tank 1: 200 mm PVC slotted/screen pipe, supply & lowering",
+      "quantity": 120,
+      "unit": "m",
+      "rate": 1255.7,
+      "rate_placeholder_was": 950,
+      "rate_basis": "dar_2023",
+      "rate_source": "DAR V2 23.4.3",
+      "activity_id": "T1_A12",
+      "predecessors": [
+        "T1_A11"
+      ],
+      "productivity": {
+        "source": "DAR V2 23.4.3",
+        "match_quality": "exact",
+        "unit": "m",
+        "coefficients_days_per_unit": {
+          "beldar": 0.005,
+          "coolie": 0.005
+        },
+        "default_gang": {
+          "beldar": 2,
+          "coolie": 2
+        },
+        "output_per_gang_day": 400.0,
+        "note": "Lowering only; in practice waits on drilling."
+      },
+      "derived": {
+        "resource_days": {
+          "beldar": 0.6,
+          "coolie": 0.6
+        },
+        "limiting_resource": "beldar"
+      },
+      "duration_days": 1,
+      "gangs_used": 1,
+      "duration_basis": "computed",
+      "ES": 22,
+      "EF": 23,
+      "LS": 66,
+      "LF": 67,
+      "total_float": 44,
+      "free_float": 0,
+      "critical": false,
+      "start_date": "2026-05-21",
+      "end_date": "2026-05-21",
+      "cost": 150684.0,
+      "monthly_cost": {
+        "2026-05": 150684.0
+      }
+    },
+    {
+      "activity_class": "BOREWELL_PEA_GRAVEL",
+      "description": "Tank 1: 3-6 mm pea gravel packing around pipe/bore",
+      "quantity": 8,
+      "unit": "cum",
+      "rate": 2024.5,
+      "rate_placeholder_was": 2200,
+      "rate_basis": "dar_2023",
+      "rate_source": "DAR V2 23.8",
+      "activity_id": "T1_A13",
+      "predecessors": [
+        "T1_A12"
+      ],
+      "productivity": {
+        "source": "DAR V2 23.8",
+        "match_quality": "exact",
+        "unit": "cum",
+        "coefficients_days_per_unit": {
+          "beldar": 0.3
+        },
+        "default_gang": {
+          "beldar": 4
+        },
+        "output_per_gang_day": 13.33,
+        "note": ""
+      },
+      "derived": {
+        "resource_days": {
+          "beldar": 2.4
+        },
+        "limiting_resource": "beldar"
+      },
+      "duration_days": 1,
+      "gangs_used": 1,
+      "duration_basis": "computed",
+      "ES": 23,
+      "EF": 24,
+      "LS": 67,
+      "LF": 68,
+      "total_float": 44,
+      "free_float": 0,
+      "critical": false,
+      "start_date": "2026-05-22",
+      "end_date": "2026-05-22",
+      "cost": 16196.0,
+      "monthly_cost": {
+        "2026-05": 16196.0
+      }
+    },
+    {
+      "activity_class": "BOREWELL_CLEANING",
+      "description": "Tank 1: Bore well cleaning with air compressor",
+      "quantity": 8,
+      "unit": "hr",
+      "rate": 1085.05,
+      "rate_placeholder_was": 1500,
+      "rate_basis": "dar_2023",
+      "rate_source": "DAR V2 23.12",
+      "activity_id": "T1_A14",
+      "predecessors": [
+        "T1_A13"
+      ],
+      "productivity": {
+        "source": "DAR V2 23.12",
+        "match_quality": "exact",
+        "unit": "hr",
+        "coefficients_days_per_unit": {
+          "compressor": 0.125
+        },
+        "default_gang": {
+          "compressor": 1
+        },
+        "output_per_gang_day": 8.0,
+        "note": "One compressor-day per 8 hours of cleaning."
+      },
+      "derived": {
+        "resource_days": {
+          "compressor": 1.0
+        },
+        "limiting_resource": "compressor"
+      },
+      "duration_days": 1,
+      "gangs_used": 1,
+      "duration_basis": "computed",
+      "ES": 24,
+      "EF": 25,
+      "LS": 68,
+      "LF": 69,
+      "total_float": 44,
+      "free_float": 44,
+      "critical": false,
+      "start_date": "2026-05-23",
+      "end_date": "2026-05-23",
+      "cost": 8680.4,
+      "monthly_cost": {
+        "2026-05": 8680.4
+      }
+    },
+    {
+      "activity_class": "STEEL_FOOTREST",
+      "description": "Tank 1: PVC coated MS foot rest 12 mm dia",
+      "quantity": 12,
+      "unit": "no",
+      "rate": 544.7,
+      "rate_placeholder_was": 350,
+      "rate_basis": "dar_2023_near",
+      "rate_source": "DAR V2 19.15.1 (DAR foot rest is 20 mm bar, BOQ is 12 mm PVC-coated)",
+      "activity_id": "T1_A15",
+      "predecessors": [
+        "T1_A06"
+      ],
+      "productivity": {
+        "source": "DAR V2 19.15.1",
+        "match_quality": "exact",
+        "unit": "no",
+        "coefficients_days_per_unit": {
+          "blacksmith": 0.1,
+          "beldar": 0.15,
+          "mason": 0.04
+        },
+        "default_gang": {
+          "blacksmith": 1,
+          "beldar": 1,
+          "mason": 1
+        },
+        "output_per_gang_day": 6.67,
+        "note": "Fabrication plus fixing in manholes with concrete blocks."
+      },
+      "derived": {
+        "resource_days": {
+          "blacksmith": 1.2,
+          "beldar": 1.8,
+          "mason": 0.48
+        },
+        "limiting_resource": "beldar"
+      },
+      "duration_days": 1,
+      "gangs_used": 2,
+      "duration_basis": "computed",
+      "ES": 39,
+      "EF": 40,
+      "LS": 68,
+      "LF": 69,
+      "total_float": 29,
+      "free_float": 29,
+      "critical": false,
+      "start_date": "2026-06-10",
+      "end_date": "2026-06-10",
+      "cost": 6536.4,
+      "monthly_cost": {
+        "2026-06": 6536.4
+      }
+    },
+    {
+      "activity_class": "VENT_PIPE",
+      "description": "Tank 1: SITC vent pipe 160 mm with fittings",
+      "quantity": 64,
+      "unit": "m",
+      "rate": 600,
+      "rate_basis": "placeholder",
+      "rate_source": "no DAR item; placeholder estimate",
+      "activity_id": "T1_A16",
+      "predecessors": [
+        "T1_A12"
+      ],
+      "productivity": {
+        "source": "DAR V2 17.35.1.2",
+        "match_quality": "proxy",
+        "unit": "m",
+        "coefficients_days_per_unit": {
+          "fitter": 0.0249,
+          "bandhani": 0.01245,
+          "beldar": 0.0492
+        },
+        "default_gang": {
+          "fitter": 1,
+          "bandhani": 1,
+          "beldar": 2
+        },
+        "output_per_gang_day": 40.17,
+        "note": "Proxy: cast-iron soil/waste/vent pipe, not 160 mm PVC vent pipe with cowl and tee."
+      },
+      "derived": {
+        "resource_days": {
+          "fitter": 1.59,
+          "bandhani": 0.8,
+          "beldar": 3.15
+        },
+        "limiting_resource": "fitter"
+      },
+      "duration_days": 2,
+      "gangs_used": 1,
+      "duration_basis": "computed",
+      "ES": 23,
+      "EF": 25,
+      "LS": 67,
+      "LF": 69,
+      "total_float": 44,
+      "free_float": 44,
+      "critical": false,
+      "start_date": "2026-05-22",
+      "end_date": "2026-05-23",
+      "cost": 38400.0,
+      "monthly_cost": {
+        "2026-05": 38400.0
+      }
+    },
+    {
+      "activity_class": "MANHOLE_RCC",
+      "description": "Tank 1: RCC manhole with frame 600x600, 6T",
+      "quantity": 5,
+      "unit": "no",
+      "rate": 6500,
+      "rate_basis": "placeholder",
+      "rate_source": "no DAR item; placeholder estimate",
+      "activity_id": "T1_A17",
+      "predecessors": [
+        "T1_A06"
+      ],
+      "productivity": {
+        "source": "DAR V2 19.18.3",
+        "match_quality": "proxy",
+        "unit": "no",
+        "coefficients_days_per_unit": {
+          "beldar": 0.12
+        },
+        "default_gang": {
+          "beldar": 2
+        },
+        "output_per_gang_day": 16.67,
+        "note": "Proxy: fixing a cast-iron heavy-duty cover. Item 19.19.1.1 (precast RCC cover) has no labour."
+      },
+      "derived": {
+        "resource_days": {
+          "beldar": 0.6
+        },
+        "limiting_resource": "beldar"
+      },
+      "duration_days": 1,
+      "gangs_used": 1,
+      "duration_basis": "computed",
+      "ES": 39,
+      "EF": 40,
+      "LS": 68,
+      "LF": 69,
+      "total_float": 29,
+      "free_float": 29,
+      "critical": false,
+      "start_date": "2026-06-10",
+      "end_date": "2026-06-10",
+      "cost": 32500.0,
+      "monthly_cost": {
+        "2026-06": 32500.0
+      }
+    },
+    {
+      "activity_class": "MANHOLE_MS",
+      "description": "Tank 1: MS heavy duty manhole 600x1200",
+      "quantity": 1,
+      "unit": "no",
+      "rate": 14000,
+      "rate_basis": "placeholder",
+      "rate_source": "no DAR item; placeholder estimate",
+      "activity_id": "T1_A18",
+      "predecessors": [
+        "T1_A06"
+      ],
+      "productivity": {
+        "source": "DAR V2 19.18.3",
+        "match_quality": "proxy",
+        "unit": "no",
+        "coefficients_days_per_unit": {
+          "beldar": 0.12
+        },
+        "default_gang": {
+          "beldar": 2
+        },
+        "output_per_gang_day": 16.67,
+        "note": "Proxy: no MS manhole cover item in DAR or IS 7272."
+      },
+      "derived": {
+        "resource_days": {
+          "beldar": 0.12
+        },
+        "limiting_resource": "beldar"
+      },
+      "duration_days": 1,
+      "gangs_used": 1,
+      "duration_basis": "computed",
+      "ES": 39,
+      "EF": 40,
+      "LS": 68,
+      "LF": 69,
+      "total_float": 29,
+      "free_float": 29,
+      "critical": false,
+      "start_date": "2026-06-10",
+      "end_date": "2026-06-10",
+      "cost": 14000.0,
+      "monthly_cost": {
+        "2026-06": 14000.0
+      }
+    },
+    {
+      "activity_id": "T1_CUR",
+      "activity_class": "CURING_DESHUTTERING",
+      "description": "Tank 1: Curing & deshuttering (7-day wait)",
+      "quantity": 1,
+      "unit": "LS",
+      "rate": 0,
+      "fixed_days": 7,
+      "predecessors": [
+        "T1_A06"
+      ],
+      "rate_basis": "none",
+      "rate_source": "waiting time, no cost",
+      "productivity": null,
+      "derived": null,
+      "duration_days": 7,
+      "gangs_used": null,
+      "duration_basis": "fixed",
+      "ES": 39,
+      "EF": 46,
+      "LS": 51,
+      "LF": 58,
+      "total_float": 12,
+      "free_float": 0,
+      "critical": false,
+      "start_date": "2026-06-10",
+      "end_date": "2026-06-17",
+      "cost": 0.0,
+      "monthly_cost": {
+        "2026-06": 0.0
+      }
+    },
+    {
+      "activity_class": "EXCAVATION_MECHANICAL",
+      "description": "Tank 2: Earth work in excavation, all kinds of soil",
+      "quantity": 1027.6,
+      "unit": "cum",
+      "rate": 177.5,
+      "rate_placeholder_was": 180,
+      "rate_basis": "dar_2023",
+      "rate_source": "DAR V1 2.6.1",
+      "activity_id": "T2_A01",
+      "predecessors": [
+        "T1_A01"
+      ],
+      "productivity": {
+        "source": "DAR V1 2.6.1",
+        "match_quality": "exact",
+        "unit": "cum",
+        "coefficients_days_per_unit": {
+          "excavator": 0.008,
+          "loader": 0.008,
+          "mate": 0.004,
+          "coolie": 0.006
+        },
+        "default_gang": {
+          "excavator": 1,
+          "loader": 1,
+          "mate": 1,
+          "coolie": 1
+        },
+        "output_per_gang_day": 125.0,
+        "note": "Coefficients are per 10 cum in DAR (0.08 machine-day). DAR text also says 30 cum/hr, which does not agree with 0.08 day/10 cum; coefficient used."
+      },
+      "derived": {
+        "resource_days": {
+          "excavator": 8.22,
+          "loader": 8.22,
+          "mate": 4.11,
+          "coolie": 6.17
+        },
+        "limiting_resource": "excavator"
+      },
+      "duration_days": 9,
+      "gangs_used": 1,
+      "duration_basis": "computed",
+      "ES": 15,
+      "EF": 24,
+      "LS": 18,
+      "LF": 27,
+      "total_float": 3,
+      "free_float": 0,
+      "critical": false,
+      "start_date": "2026-05-13",
+      "end_date": "2026-05-22",
+      "cost": 182399.0,
+      "monthly_cost": {
+        "2026-05": 182399.0
+      }
+    },
+    {
+      "activity_class": "PCC_LEAN",
+      "description": "Tank 2: PCC 1:4:8 up to plinth",
+      "quantity": 10.65,
+      "unit": "cum",
+      "rate": 6812.0,
+      "rate_placeholder_was": 5500,
+      "rate_basis": "dar_2023",
+      "rate_source": "DAR V1 4.1.8",
+      "activity_id": "T2_A02",
+      "predecessors": [
+        "T2_A01"
+      ],
+      "productivity": {
+        "source": "DAR V1 4.1.8 = IS 7272 ii(d)(2)",
+        "match_quality": "exact",
+        "unit": "cum",
+        "coefficients_days_per_unit": {
+          "mason": 0.1,
+          "beldar": 1.63,
+          "bhisti": 0.7,
+          "mixer": 0.07,
+          "vibrator": 0.07
+        },
+        "default_gang": {
+          "mason": 1,
+          "beldar": 7,
+          "bhisti": 3,
+          "mixer": 1,
+          "vibrator": 1
+        },
+        "output_per_gang_day": 4.29,
+        "note": ""
+      },
+      "derived": {
+        "resource_days": {
+          "mason": 1.07,
+          "beldar": 17.36,
+          "bhisti": 7.46,
+          "mixer": 0.75,
+          "vibrator": 0.75
+        },
+        "limiting_resource": "bhisti"
+      },
+      "duration_days": 2,
+      "gangs_used": 2,
+      "duration_basis": "computed",
+      "ES": 24,
+      "EF": 26,
+      "LS": 27,
+      "LF": 29,
+      "total_float": 3,
+      "free_float": 0,
+      "critical": false,
+      "start_date": "2026-05-23",
+      "end_date": "2026-05-25",
+      "cost": 72547.8,
+      "monthly_cost": {
+        "2026-05": 72547.8
+      }
+    },
+    {
+      "activity_class": "STEEL_REINFORCEMENT",
+      "description": "Tank 2: TMT Fe-550D reinforcement up to plinth",
+      "quantity": 14840.57,
+      "unit": "kg",
+      "rate": 107.85,
+      "rate_placeholder_was": 72,
+      "rate_basis": "dar_2023_near",
+      "rate_source": "DAR V1 5.22.6 (DAR grade is Fe-500D, BOQ says Fe-550D)",
+      "activity_id": "T2_A03",
+      "predecessors": [
+        "T2_A02",
+        "T1_A03"
+      ],
+      "productivity": {
+        "source": "DAR V1 5.22.6 = IS 7272 vi",
+        "match_quality": "exact",
+        "unit": "kg",
+        "coefficients_days_per_unit": {
+          "bar_bender": 0.01,
+          "beldar": 0.01
+        },
+        "default_gang": {
+          "bar_bender": 5,
+          "beldar": 5
+        },
+        "output_per_gang_day": 500.0,
+        "note": "1 quintal (100 kg) per bar-bender + mazdoor pair per day. DAR grade is Fe-500D; BOQ says Fe-550D."
+      },
+      "derived": {
+        "resource_days": {
+          "bar_bender": 148.41,
+          "beldar": 148.41
+        },
+        "limiting_resource": "bar_bender"
+      },
+      "duration_days": 10,
+      "gangs_used": 3,
+      "duration_basis": "computed",
+      "ES": 27,
+      "EF": 37,
+      "LS": 31,
+      "LF": 41,
+      "total_float": 4,
+      "free_float": 4,
+      "critical": false,
+      "start_date": "2026-05-27",
+      "end_date": "2026-06-06",
+      "cost": 1600555.47,
+      "monthly_cost": {
+        "2026-05": 640222.19,
+        "2026-06": 960333.28
+      }
+    },
+    {
+      "activity_class": "SHUTTERING_FOUNDATION",
+      "description": "Tank 2: Centering & shuttering - footings, walls, column bases",
+      "quantity": 608.96,
+      "unit": "sqm",
+      "rate": 961.3,
+      "rate_placeholder_was": 520,
+      "rate_basis": "dar_2023",
+      "rate_source": "DAR V1 4.3.3",
+      "activity_id": "T2_A04",
+      "predecessors": [
+        "T2_A02",
+        "T1_A04"
+      ],
+      "productivity": {
+        "source": "DAR V1 4.3.3 (IS 7272 v(a) as cross-check)",
+        "match_quality": "exact",
+        "unit": "sqm",
+        "coefficients_days_per_unit": {
+          "fitter": 0.22222,
+          "beldar": 0.44444
+        },
+        "default_gang": {
+          "fitter": 2,
+          "beldar": 4
+        },
+        "output_per_gang_day": 9.0,
+        "note": "DAR item is a steel-panel system. IS 7272 wooden formwork gives carpenter 0.25 + mazdoor 0.20 per sqm."
+      },
+      "derived": {
+        "resource_days": {
+          "fitter": 135.32,
+          "beldar": 270.65
+        },
+        "limiting_resource": "fitter"
+      },
+      "duration_days": 12,
+      "gangs_used": 6,
+      "duration_basis": "computed",
+      "ES": 29,
+      "EF": 41,
+      "LS": 29,
+      "LF": 41,
+      "total_float": 0,
+      "free_float": 0,
+      "critical": true,
+      "start_date": "2026-05-29",
+      "end_date": "2026-06-11",
+      "cost": 585393.25,
+      "monthly_cost": {
+        "2026-05": 97565.54,
+        "2026-06": 487827.71
+      }
+    },
+    {
+      "activity_class": "RCC_FOOTING",
+      "description": "Tank 2: M30 RMC concrete in foundation/footing",
+      "quantity": 50,
+      "unit": "cum",
+      "rate": 9655.7,
+      "rate_placeholder_was": 8500,
+      "rate_basis": "dar_2023",
+      "rate_source": "DAR V1 5.33.1.2",
+      "activity_id": "T2_A05",
+      "predecessors": [
+        "T2_A03",
+        "T2_A04",
+        "T1_A05"
+      ],
+      "productivity": {
+        "source": "DAR V1 5.33.1.2 = IS 7272 ii(f)",
+        "match_quality": "exact",
+        "unit": "cum",
+        "coefficients_days_per_unit": {
+          "mason": 0.17,
+          "beldar": 2.0,
+          "bhisti": 0.9,
+          "vibrator": 0.07
+        },
+        "default_gang": {
+          "mason": 1,
+          "beldar": 12,
+          "bhisti": 5,
+          "vibrator": 1
+        },
+        "output_per_gang_day": 5.56,
+        "note": "RMC production and pumping are plant services, not limiting."
+      },
+      "derived": {
+        "resource_days": {
+          "mason": 8.5,
+          "beldar": 100.0,
+          "bhisti": 45.0,
+          "vibrator": 3.5
+        },
+        "limiting_resource": "bhisti"
+      },
+      "duration_days": 3,
+      "gangs_used": 3,
+      "duration_basis": "computed",
+      "ES": 41,
+      "EF": 44,
+      "LS": 41,
+      "LF": 44,
+      "total_float": 0,
+      "free_float": 0,
+      "critical": true,
+      "start_date": "2026-06-12",
+      "end_date": "2026-06-15",
+      "cost": 482785.0,
+      "monthly_cost": {
+        "2026-06": 482785.0
+      }
+    },
+    {
+      "activity_class": "RCC_SUPERSTRUCTURE",
+      "description": "Tank 2: M30 RMC concrete in walls/columns/beams/slab",
+      "quantity": 104.53,
+      "unit": "cum",
+      "rate": 9655.7,
+      "rate_placeholder_was": 9200,
+      "rate_basis": "dar_2023",
+      "rate_source": "DAR V1 5.33.1.2",
+      "activity_id": "T2_A06",
+      "predecessors": [
+        "T2_A05",
+        "T1_A06"
+      ],
+      "productivity": {
+        "source": "DAR V1 5.33.1.2 (IS 7272 ii(g),(k) is higher)",
+        "match_quality": "exact",
+        "unit": "cum",
+        "coefficients_days_per_unit": {
+          "mason": 0.17,
+          "beldar": 2.0,
+          "bhisti": 0.9,
+          "vibrator": 0.07
+        },
+        "default_gang": {
+          "mason": 1,
+          "beldar": 12,
+          "bhisti": 5,
+          "vibrator": 1
+        },
+        "output_per_gang_day": 5.56,
+        "note": "IS 7272 gives mazdoor 2.50 (slab) to 3.50 (columns), so this may be optimistic."
+      },
+      "derived": {
+        "resource_days": {
+          "mason": 17.77,
+          "beldar": 209.06,
+          "bhisti": 94.08,
+          "vibrator": 7.32
+        },
+        "limiting_resource": "bhisti"
+      },
+      "duration_days": 7,
+      "gangs_used": 3,
+      "duration_basis": "computed",
+      "ES": 44,
+      "EF": 51,
+      "LS": 44,
+      "LF": 51,
+      "total_float": 0,
+      "free_float": 0,
+      "critical": true,
+      "start_date": "2026-06-16",
+      "end_date": "2026-06-23",
+      "cost": 1009310.32,
+      "monthly_cost": {
+        "2026-06": 1009310.32
+      }
+    },
+    {
+      "activity_class": "BACKFILLING",
+      "description": "Tank 2: Filling available excavated earth in layers",
+      "quantity": 205.52,
+      "unit": "cum",
+      "rate": 196.0,
+      "rate_placeholder_was": 150,
+      "rate_basis": "dar_2023",
+      "rate_source": "DAR V1 2.25",
+      "activity_id": "T2_A07",
+      "predecessors": [
+        "T2_CUR"
+      ],
+      "productivity": {
+        "source": "IS 7272 i(f) as amended 1979 (+ i(e) for 50 m lead)",
+        "match_quality": "exact",
+        "unit": "cum",
+        "coefficients_days_per_unit": {
+          "mate": 0.03,
+          "mazdoor": 0.34,
+          "bhisti": 0.02
+        },
+        "default_gang": {
+          "mate": 2,
+          "mazdoor": 17,
+          "bhisti": 1
+        },
+        "output_per_gang_day": 50.0,
+        "note": "Amended: 0.22 mazdoor for 25 m lead + 0.12 per extra 25 m. DAR 2.25 gives about 0.18 labour-day/cum, but that parse looked unreliable."
+      },
+      "derived": {
+        "resource_days": {
+          "mate": 6.17,
+          "mazdoor": 69.88,
+          "bhisti": 4.11
+        },
+        "limiting_resource": "mazdoor"
+      },
+      "duration_days": 5,
+      "gangs_used": 1,
+      "duration_basis": "computed",
+      "ES": 58,
+      "EF": 63,
+      "LS": 58,
+      "LF": 63,
+      "total_float": 0,
+      "free_float": 0,
+      "critical": true,
+      "start_date": "2026-07-02",
+      "end_date": "2026-07-07",
+      "cost": 40281.92,
+      "monthly_cost": {
+        "2026-07": 40281.92
+      }
+    },
+    {
+      "activity_class": "GRAVEL_FILL_BOULDER",
+      "description": "Tank 2: Stone boulders 6-15 cm in recharge pit",
+      "quantity": 49.98,
+      "unit": "cum",
+      "rate": 1509.8,
+      "rate_placeholder_was": 1400,
+      "rate_basis": "dar_2023_near",
+      "rate_source": "DAR V2 23.5 (boulder size 5-20 cm vs BOQ 6-15 cm)",
+      "activity_id": "T2_A08",
+      "predecessors": [
+        "T2_A07"
+      ],
+      "productivity": {
+        "source": "DAR V2 23.5",
+        "match_quality": "near",
+        "unit": "cum",
+        "coefficients_days_per_unit": {
+          "beldar": 0.25
+        },
+        "default_gang": {
+          "beldar": 8
+        },
+        "output_per_gang_day": 32.0,
+        "note": "DAR boulder size 5-20 cm; BOQ 6-15 cm."
+      },
+      "derived": {
+        "resource_days": {
+          "beldar": 12.49
+        },
+        "limiting_resource": "beldar"
+      },
+      "duration_days": 2,
+      "gangs_used": 1,
+      "duration_basis": "computed",
+      "ES": 63,
+      "EF": 65,
+      "LS": 63,
+      "LF": 65,
+      "total_float": 0,
+      "free_float": 0,
+      "critical": true,
+      "start_date": "2026-07-08",
+      "end_date": "2026-07-09",
+      "cost": 75459.8,
+      "monthly_cost": {
+        "2026-07": 75459.8
+      }
+    },
+    {
+      "activity_class": "GRAVEL_FILL_GRAVEL",
+      "description": "Tank 2: Gravel 10-20 mm over boulders",
+      "quantity": 49.98,
+      "unit": "cum",
+      "rate": 1538.25,
+      "rate_placeholder_was": 1600,
+      "rate_basis": "dar_2023_near",
+      "rate_source": "DAR V2 23.6 (gravel 5-10 mm vs BOQ 10-20 mm)",
+      "activity_id": "T2_A09",
+      "predecessors": [
+        "T2_A08"
+      ],
+      "productivity": {
+        "source": "DAR V2 23.6",
+        "match_quality": "near",
+        "unit": "cum",
+        "coefficients_days_per_unit": {
+          "beldar": 0.25
+        },
+        "default_gang": {
+          "beldar": 8
+        },
+        "output_per_gang_day": 32.0,
+        "note": "DAR gravel 5-10 mm; BOQ 10-20 mm."
+      },
+      "derived": {
+        "resource_days": {
+          "beldar": 12.49
+        },
+        "limiting_resource": "beldar"
+      },
+      "duration_days": 2,
+      "gangs_used": 1,
+      "duration_basis": "computed",
+      "ES": 65,
+      "EF": 67,
+      "LS": 65,
+      "LF": 67,
+      "total_float": 0,
+      "free_float": 0,
+      "critical": true,
+      "start_date": "2026-07-10",
+      "end_date": "2026-07-11",
+      "cost": 76881.74,
+      "monthly_cost": {
+        "2026-07": 76881.74
+      }
+    },
+    {
+      "activity_class": "GRAVEL_FILL_SAND",
+      "description": "Tank 2: Coarse sand 1.5-3 mm over gravel",
+      "quantity": 49.98,
+      "unit": "cum",
+      "rate": 1538.25,
+      "rate_placeholder_was": 1300,
+      "rate_basis": "dar_2023_near",
+      "rate_source": "DAR V2 23.7 (sand 1.5-2 mm vs BOQ 1.5-3 mm)",
+      "activity_id": "T2_A10",
+      "predecessors": [
+        "T2_A09"
+      ],
+      "productivity": {
+        "source": "DAR V2 23.7",
+        "match_quality": "near",
+        "unit": "cum",
+        "coefficients_days_per_unit": {
+          "beldar": 0.25
+        },
+        "default_gang": {
+          "beldar": 8
+        },
+        "output_per_gang_day": 32.0,
+        "note": "DAR coarse sand 1.5-2 mm; BOQ 1.5-3 mm."
+      },
+      "derived": {
+        "resource_days": {
+          "beldar": 12.49
+        },
+        "limiting_resource": "beldar"
+      },
+      "duration_days": 2,
+      "gangs_used": 1,
+      "duration_basis": "computed",
+      "ES": 67,
+      "EF": 69,
+      "LS": 67,
+      "LF": 69,
+      "total_float": 0,
+      "free_float": 0,
+      "critical": true,
+      "start_date": "2026-07-13",
+      "end_date": "2026-07-14",
+      "cost": 76881.74,
+      "monthly_cost": {
+        "2026-07": 76881.74
+      }
+    },
+    {
+      "activity_class": "BOREWELL_DRILLING",
+      "description": "Tank 2: Drilling 400 mm dia bore, 0-30 m",
+      "quantity": 120,
+      "unit": "m",
+      "rate": 990.8,
+      "rate_placeholder_was": 1100,
+      "rate_basis": "dar_2023",
+      "rate_source": "DAR V2 23.1.1.3",
+      "activity_id": "T2_A11",
+      "predecessors": [
+        "T2_A02",
+        "T1_A11"
+      ],
+      "productivity": {
+        "source": "DAR V2 23.1.1.3",
+        "match_quality": "exact",
+        "unit": "m",
+        "coefficients_days_per_unit": {
+          "rig": 0.04,
+          "truck": 0.01716,
+          "beldar": 0.24,
+          "mistry": 0.04,
+          "chowkidar": 0.04
+        },
+        "default_gang": {
+          "rig": 1,
+          "truck": 1,
+          "beldar": 6,
+          "mistry": 1,
+          "chowkidar": 1
+        },
+        "output_per_gang_day": 25.0,
+        "note": "25 m per rig-day, including shifting; 400 mm dia, soil, up to 90 m."
+      },
+      "derived": {
+        "resource_days": {
+          "rig": 4.8,
+          "truck": 2.06,
+          "beldar": 28.8,
+          "mistry": 4.8,
+          "chowkidar": 4.8
+        },
+        "limiting_resource": "rig"
+      },
+      "duration_days": 5,
+      "gangs_used": 1,
+      "duration_basis": "computed",
+      "ES": 26,
+      "EF": 31,
+      "LS": 61,
+      "LF": 66,
+      "total_float": 35,
+      "free_float": 0,
+      "critical": false,
+      "start_date": "2026-05-26",
+      "end_date": "2026-05-30",
+      "cost": 118896.0,
+      "monthly_cost": {
+        "2026-05": 118896.0
+      }
+    },
+    {
+      "activity_class": "BOREWELL_PVC_SCREEN",
+      "description": "Tank 2: 200 mm PVC slotted/screen pipe, supply & lowering",
+      "quantity": 120,
+      "unit": "m",
+      "rate": 1255.7,
+      "rate_placeholder_was": 950,
+      "rate_basis": "dar_2023",
+      "rate_source": "DAR V2 23.4.3",
+      "activity_id": "T2_A12",
+      "predecessors": [
+        "T2_A11"
+      ],
+      "productivity": {
+        "source": "DAR V2 23.4.3",
+        "match_quality": "exact",
+        "unit": "m",
+        "coefficients_days_per_unit": {
+          "beldar": 0.005,
+          "coolie": 0.005
+        },
+        "default_gang": {
+          "beldar": 2,
+          "coolie": 2
+        },
+        "output_per_gang_day": 400.0,
+        "note": "Lowering only; in practice waits on drilling."
+      },
+      "derived": {
+        "resource_days": {
+          "beldar": 0.6,
+          "coolie": 0.6
+        },
+        "limiting_resource": "beldar"
+      },
+      "duration_days": 1,
+      "gangs_used": 1,
+      "duration_basis": "computed",
+      "ES": 31,
+      "EF": 32,
+      "LS": 66,
+      "LF": 67,
+      "total_float": 35,
+      "free_float": 0,
+      "critical": false,
+      "start_date": "2026-06-01",
+      "end_date": "2026-06-01",
+      "cost": 150684.0,
+      "monthly_cost": {
+        "2026-06": 150684.0
+      }
+    },
+    {
+      "activity_class": "BOREWELL_PEA_GRAVEL",
+      "description": "Tank 2: 3-6 mm pea gravel packing around pipe/bore",
+      "quantity": 8,
+      "unit": "cum",
+      "rate": 2024.5,
+      "rate_placeholder_was": 2200,
+      "rate_basis": "dar_2023",
+      "rate_source": "DAR V2 23.8",
+      "activity_id": "T2_A13",
+      "predecessors": [
+        "T2_A12"
+      ],
+      "productivity": {
+        "source": "DAR V2 23.8",
+        "match_quality": "exact",
+        "unit": "cum",
+        "coefficients_days_per_unit": {
+          "beldar": 0.3
+        },
+        "default_gang": {
+          "beldar": 4
+        },
+        "output_per_gang_day": 13.33,
+        "note": ""
+      },
+      "derived": {
+        "resource_days": {
+          "beldar": 2.4
+        },
+        "limiting_resource": "beldar"
+      },
+      "duration_days": 1,
+      "gangs_used": 1,
+      "duration_basis": "computed",
+      "ES": 32,
+      "EF": 33,
+      "LS": 67,
+      "LF": 68,
+      "total_float": 35,
+      "free_float": 0,
+      "critical": false,
+      "start_date": "2026-06-02",
+      "end_date": "2026-06-02",
+      "cost": 16196.0,
+      "monthly_cost": {
+        "2026-06": 16196.0
+      }
+    },
+    {
+      "activity_class": "BOREWELL_CLEANING",
+      "description": "Tank 2: Bore well cleaning with air compressor",
+      "quantity": 8,
+      "unit": "hr",
+      "rate": 1085.05,
+      "rate_placeholder_was": 1500,
+      "rate_basis": "dar_2023",
+      "rate_source": "DAR V2 23.12",
+      "activity_id": "T2_A14",
+      "predecessors": [
+        "T2_A13"
+      ],
+      "productivity": {
+        "source": "DAR V2 23.12",
+        "match_quality": "exact",
+        "unit": "hr",
+        "coefficients_days_per_unit": {
+          "compressor": 0.125
+        },
+        "default_gang": {
+          "compressor": 1
+        },
+        "output_per_gang_day": 8.0,
+        "note": "One compressor-day per 8 hours of cleaning."
+      },
+      "derived": {
+        "resource_days": {
+          "compressor": 1.0
+        },
+        "limiting_resource": "compressor"
+      },
+      "duration_days": 1,
+      "gangs_used": 1,
+      "duration_basis": "computed",
+      "ES": 33,
+      "EF": 34,
+      "LS": 68,
+      "LF": 69,
+      "total_float": 35,
+      "free_float": 35,
+      "critical": false,
+      "start_date": "2026-06-03",
+      "end_date": "2026-06-03",
+      "cost": 8680.4,
+      "monthly_cost": {
+        "2026-06": 8680.4
+      }
+    },
+    {
+      "activity_class": "STEEL_FOOTREST",
+      "description": "Tank 2: PVC coated MS foot rest 12 mm dia",
+      "quantity": 12,
+      "unit": "no",
+      "rate": 544.7,
+      "rate_placeholder_was": 350,
+      "rate_basis": "dar_2023_near",
+      "rate_source": "DAR V2 19.15.1 (DAR foot rest is 20 mm bar, BOQ is 12 mm PVC-coated)",
+      "activity_id": "T2_A15",
+      "predecessors": [
+        "T2_A06"
+      ],
+      "productivity": {
+        "source": "DAR V2 19.15.1",
+        "match_quality": "exact",
+        "unit": "no",
+        "coefficients_days_per_unit": {
+          "blacksmith": 0.1,
+          "beldar": 0.15,
+          "mason": 0.04
+        },
+        "default_gang": {
+          "blacksmith": 1,
+          "beldar": 1,
+          "mason": 1
+        },
+        "output_per_gang_day": 6.67,
+        "note": "Fabrication plus fixing in manholes with concrete blocks."
+      },
+      "derived": {
+        "resource_days": {
+          "blacksmith": 1.2,
+          "beldar": 1.8,
+          "mason": 0.48
+        },
+        "limiting_resource": "beldar"
+      },
+      "duration_days": 1,
+      "gangs_used": 2,
+      "duration_basis": "computed",
+      "ES": 51,
+      "EF": 52,
+      "LS": 68,
+      "LF": 69,
+      "total_float": 17,
+      "free_float": 17,
+      "critical": false,
+      "start_date": "2026-06-24",
+      "end_date": "2026-06-24",
+      "cost": 6536.4,
+      "monthly_cost": {
+        "2026-06": 6536.4
+      }
+    },
+    {
+      "activity_class": "VENT_PIPE",
+      "description": "Tank 2: SITC vent pipe 160 mm with fittings",
+      "quantity": 64,
+      "unit": "m",
+      "rate": 600,
+      "rate_basis": "placeholder",
+      "rate_source": "no DAR item; placeholder estimate",
+      "activity_id": "T2_A16",
+      "predecessors": [
+        "T2_A12"
+      ],
+      "productivity": {
+        "source": "DAR V2 17.35.1.2",
+        "match_quality": "proxy",
+        "unit": "m",
+        "coefficients_days_per_unit": {
+          "fitter": 0.0249,
+          "bandhani": 0.01245,
+          "beldar": 0.0492
+        },
+        "default_gang": {
+          "fitter": 1,
+          "bandhani": 1,
+          "beldar": 2
+        },
+        "output_per_gang_day": 40.17,
+        "note": "Proxy: cast-iron soil/waste/vent pipe, not 160 mm PVC vent pipe with cowl and tee."
+      },
+      "derived": {
+        "resource_days": {
+          "fitter": 1.59,
+          "bandhani": 0.8,
+          "beldar": 3.15
+        },
+        "limiting_resource": "fitter"
+      },
+      "duration_days": 2,
+      "gangs_used": 1,
+      "duration_basis": "computed",
+      "ES": 32,
+      "EF": 34,
+      "LS": 67,
+      "LF": 69,
+      "total_float": 35,
+      "free_float": 35,
+      "critical": false,
+      "start_date": "2026-06-02",
+      "end_date": "2026-06-03",
+      "cost": 38400.0,
+      "monthly_cost": {
+        "2026-06": 38400.0
+      }
+    },
+    {
+      "activity_class": "MANHOLE_RCC",
+      "description": "Tank 2: RCC manhole with frame 600x600, 6T",
+      "quantity": 5,
+      "unit": "no",
+      "rate": 6500,
+      "rate_basis": "placeholder",
+      "rate_source": "no DAR item; placeholder estimate",
+      "activity_id": "T2_A17",
+      "predecessors": [
+        "T2_A06"
+      ],
+      "productivity": {
+        "source": "DAR V2 19.18.3",
+        "match_quality": "proxy",
+        "unit": "no",
+        "coefficients_days_per_unit": {
+          "beldar": 0.12
+        },
+        "default_gang": {
+          "beldar": 2
+        },
+        "output_per_gang_day": 16.67,
+        "note": "Proxy: fixing a cast-iron heavy-duty cover. Item 19.19.1.1 (precast RCC cover) has no labour."
+      },
+      "derived": {
+        "resource_days": {
+          "beldar": 0.6
+        },
+        "limiting_resource": "beldar"
+      },
+      "duration_days": 1,
+      "gangs_used": 1,
+      "duration_basis": "computed",
+      "ES": 51,
+      "EF": 52,
+      "LS": 68,
+      "LF": 69,
+      "total_float": 17,
+      "free_float": 17,
+      "critical": false,
+      "start_date": "2026-06-24",
+      "end_date": "2026-06-24",
+      "cost": 32500.0,
+      "monthly_cost": {
+        "2026-06": 32500.0
+      }
+    },
+    {
+      "activity_class": "MANHOLE_MS",
+      "description": "Tank 2: MS heavy duty manhole 600x1200",
+      "quantity": 1,
+      "unit": "no",
+      "rate": 14000,
+      "rate_basis": "placeholder",
+      "rate_source": "no DAR item; placeholder estimate",
+      "activity_id": "T2_A18",
+      "predecessors": [
+        "T2_A06"
+      ],
+      "productivity": {
+        "source": "DAR V2 19.18.3",
+        "match_quality": "proxy",
+        "unit": "no",
+        "coefficients_days_per_unit": {
+          "beldar": 0.12
+        },
+        "default_gang": {
+          "beldar": 2
+        },
+        "output_per_gang_day": 16.67,
+        "note": "Proxy: no MS manhole cover item in DAR or IS 7272."
+      },
+      "derived": {
+        "resource_days": {
+          "beldar": 0.12
+        },
+        "limiting_resource": "beldar"
+      },
+      "duration_days": 1,
+      "gangs_used": 1,
+      "duration_basis": "computed",
+      "ES": 51,
+      "EF": 52,
+      "LS": 68,
+      "LF": 69,
+      "total_float": 17,
+      "free_float": 17,
+      "critical": false,
+      "start_date": "2026-06-24",
+      "end_date": "2026-06-24",
+      "cost": 14000.0,
+      "monthly_cost": {
+        "2026-06": 14000.0
+      }
+    },
+    {
+      "activity_id": "T2_CUR",
+      "activity_class": "CURING_DESHUTTERING",
+      "description": "Tank 2: Curing & deshuttering (7-day wait)",
+      "quantity": 1,
+      "unit": "LS",
+      "rate": 0,
+      "fixed_days": 7,
+      "predecessors": [
+        "T2_A06"
+      ],
+      "rate_basis": "none",
+      "rate_source": "waiting time, no cost",
+      "productivity": null,
+      "derived": null,
+      "duration_days": 7,
+      "gangs_used": null,
+      "duration_basis": "fixed",
+      "ES": 51,
+      "EF": 58,
+      "LS": 51,
+      "LF": 58,
+      "total_float": 0,
+      "free_float": 0,
+      "critical": true,
+      "start_date": "2026-06-24",
+      "end_date": "2026-07-01",
+      "cost": 0.0,
+      "monthly_cost": {
+        "2026-06": 0.0,
+        "2026-07": 0.0
+      }
+    },
+    {
+      "activity_id": "TEST",
+      "activity_class": "TESTING_HANDOVER",
+      "description": "Joint testing & handover",
+      "quantity": 1,
+      "unit": "LS",
+      "rate": 100000,
+      "fixed_days": 6,
+      "predecessors": [
+        "T1_A10",
+        "T1_A14",
+        "T1_A15",
+        "T1_A16",
+        "T1_A17",
+        "T1_A18",
+        "T2_A10",
+        "T2_A14",
+        "T2_A15",
+        "T2_A16",
+        "T2_A17",
+        "T2_A18"
+      ],
+      "rate_basis": "original_workbook",
+      "rate_source": "lump sum from the original cash-flow sheet",
+      "productivity": null,
+      "derived": null,
+      "duration_days": 6,
+      "gangs_used": null,
+      "duration_basis": "fixed",
+      "ES": 69,
+      "EF": 75,
+      "LS": 69,
+      "LF": 75,
+      "total_float": 0,
+      "free_float": 0,
+      "critical": true,
+      "start_date": "2026-07-15",
+      "end_date": "2026-07-21",
+      "cost": 100000.0,
+      "monthly_cost": {
+        "2026-07": 100000.0
+      }
+    }
+  ],
+  "project_duration_days": 75,
+  "critical_path": [
+    "MOB",
+    "T1_A01",
+    "T1_A02",
+    "T1_A04",
+    "T2_A04",
+    "T2_A05",
+    "T2_A06",
+    "T2_CUR",
+    "T2_A07",
+    "T2_A08",
+    "T2_A09",
+    "T2_A10",
+    "TEST"
+  ],
+  "project_start_date": "2026-04-25",
+  "project_end_date": "2026-07-21",
+  "workweek_days": 6,
+  "holidays": [],
+  "cashflow_config": {
+    "indirect_pct": 0.0,
+    "retention_pct": 0,
+    "payment_lag_months": 1,
+    "mobilisation_advance_pct": 0.0
+  },
+  "monthly": [
+    {
+      "month": "2026-04",
+      "work_value": 125000.0,
+      "overhead": 0.0,
+      "expenditure": 125000.0,
+      "receipt": 0.0,
+      "retention_withheld": 0.0,
+      "retention_released": 0.0,
+      "advance_received": 0.0,
+      "advance_recovered": 0.0,
+      "net_cash_flow": -125000.0,
+      "cumulative_net_cash": -125000.0,
+      "cumulative_work_value": 125000.0,
+      "cumulative_percent": 1.33
+    },
+    {
+      "month": "2026-05",
+      "work_value": 4232239.12,
+      "overhead": 0.0,
+      "expenditure": 4232239.12,
+      "receipt": 125000.0,
+      "retention_withheld": 0.0,
+      "retention_released": 0.0,
+      "advance_received": 0.0,
+      "advance_recovered": 0.0,
+      "net_cash_flow": -4107239.12,
+      "cumulative_net_cash": -4232239.12,
+      "cumulative_work_value": 4357239.12,
+      "cumulative_percent": 46.22
+    },
+    {
+      "month": "2026-06",
+      "work_value": 4700033.36,
+      "overhead": 0.0,
+      "expenditure": 4700033.36,
+      "receipt": 4232239.12,
+      "retention_withheld": 0.0,
+      "retention_released": 0.0,
+      "advance_received": 0.0,
+      "advance_recovered": 0.0,
+      "net_cash_flow": -467794.24,
+      "cumulative_net_cash": -4700033.36,
+      "cumulative_work_value": 9057272.48,
+      "cumulative_percent": 96.08
+    },
+    {
+      "month": "2026-07",
+      "work_value": 369505.2,
+      "overhead": 0.0,
+      "expenditure": 369505.2,
+      "receipt": 4700033.36,
+      "retention_withheld": 0.0,
+      "retention_released": 0.0,
+      "advance_received": 0.0,
+      "advance_recovered": 0.0,
+      "net_cash_flow": 4330528.16,
+      "cumulative_net_cash": -369505.2,
+      "cumulative_work_value": 9426777.68,
+      "cumulative_percent": 100.0
+    },
+    {
+      "month": "2026-08",
+      "work_value": 0.0,
+      "overhead": 0.0,
+      "expenditure": 0.0,
+      "receipt": 369505.2,
+      "retention_withheld": 0.0,
+      "retention_released": 0.0,
+      "advance_received": 0.0,
+      "advance_recovered": 0.0,
+      "net_cash_flow": 369505.2,
+      "cumulative_net_cash": -0.0,
+      "cumulative_work_value": 9426777.68,
+      "cumulative_percent": 100.0
+    }
+  ],
+  "cost_summary": {
+    "total_work_value": 9426777.68,
+    "total_overhead": 0.0,
+    "peak_spend_month": "2026-06",
+    "peak_spend_value": 4700033.36,
+    "peak_funding_requirement": 4700033.36,
+    "peak_funding_month": "2026-06",
+    "final_net_cash": -0.0
+  }
+}

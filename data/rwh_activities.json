@@ -1,0 +1,255 @@
+{
+  "project": "RWH Tank, Narsi Village Phase 1, Kosi Kalan, Mathura",
+  "project_type": "RAIN_WATER_HARVESTING",
+  "_note": "Rates for A01-A15 are CPWD DAR 2023 (Delhi, April 2023) final rates per unit, which include 18% GST, 15% contractor profit and overheads and 1% cess; A16-A18 have no DAR match and remain placeholder estimates. Replace with awarded BOQ rates when available.",
+  "activities": [
+    {
+      "activity_id": "A01",
+      "activity_class": "EXCAVATION_MECHANICAL",
+      "description": "Earth work in excavation, all kinds of soil",
+      "quantity": 1027.6,
+      "unit": "cum",
+      "rate": 177.5,
+      "predecessors": [],
+      "rate_placeholder_was": 180,
+      "rate_basis": "dar_2023",
+      "rate_source": "DAR V1 2.6.1"
+    },
+    {
+      "activity_id": "A02",
+      "activity_class": "PCC_LEAN",
+      "description": "PCC 1:4:8 up to plinth",
+      "quantity": 10.65,
+      "unit": "cum",
+      "rate": 6812.0,
+      "predecessors": [
+        "A01"
+      ],
+      "rate_placeholder_was": 5500,
+      "rate_basis": "dar_2023",
+      "rate_source": "DAR V1 4.1.8"
+    },
+    {
+      "activity_id": "A03",
+      "activity_class": "STEEL_REINFORCEMENT",
+      "description": "TMT Fe-550D reinforcement up to plinth",
+      "quantity": 14840.57,
+      "unit": "kg",
+      "rate": 107.85,
+      "predecessors": [
+        "A02"
+      ],
+      "rate_placeholder_was": 72,
+      "rate_basis": "dar_2023_near",
+      "rate_source": "DAR V1 5.22.6 (DAR grade is Fe-500D, BOQ says Fe-550D)"
+    },
+    {
+      "activity_id": "A04",
+      "activity_class": "SHUTTERING_FOUNDATION",
+      "description": "Centering & shuttering - footings, walls, column bases",
+      "quantity": 608.96,
+      "unit": "sqm",
+      "rate": 961.3,
+      "predecessors": [
+        "A02"
+      ],
+      "rate_placeholder_was": 520,
+      "rate_basis": "dar_2023",
+      "rate_source": "DAR V1 4.3.3"
+    },
+    {
+      "activity_id": "A05",
+      "activity_class": "RCC_FOOTING",
+      "description": "M30 RMC concrete in foundation/footing",
+      "quantity": 50,
+      "unit": "cum",
+      "rate": 9655.7,
+      "predecessors": [
+        "A03",
+        "A04"
+      ],
+      "rate_placeholder_was": 8500,
+      "rate_basis": "dar_2023",
+      "rate_source": "DAR V1 5.33.1.2"
+    },
+    {
+      "activity_id": "A06",
+      "activity_class": "RCC_SUPERSTRUCTURE",
+      "description": "M30 RMC concrete in walls/columns/beams/slab",
+      "quantity": 104.53,
+      "unit": "cum",
+      "rate": 9655.7,
+      "predecessors": [
+        "A05"
+      ],
+      "rate_placeholder_was": 9200,
+      "rate_basis": "dar_2023",
+      "rate_source": "DAR V1 5.33.1.2"
+    },
+    {
+      "activity_id": "A07",
+      "activity_class": "BACKFILLING",
+      "description": "Filling available excavated earth in layers",
+      "quantity": 205.52,
+      "unit": "cum",
+      "rate": 196.0,
+      "predecessors": [
+        "A06"
+      ],
+      "rate_placeholder_was": 150,
+      "rate_basis": "dar_2023",
+      "rate_source": "DAR V1 2.25"
+    },
+    {
+      "activity_id": "A08",
+      "activity_class": "GRAVEL_FILL_BOULDER",
+      "description": "Stone boulders 6-15 cm in recharge pit",
+      "quantity": 49.98,
+      "unit": "cum",
+      "rate": 1509.8,
+      "predecessors": [
+        "A06"
+      ],
+      "rate_placeholder_was": 1400,
+      "rate_basis": "dar_2023_near",
+      "rate_source": "DAR V2 23.5 (boulder size 5-20 cm vs BOQ 6-15 cm)"
+    },
+    {
+      "activity_id": "A09",
+      "activity_class": "GRAVEL_FILL_GRAVEL",
+      "description": "Gravel 10-20 mm over boulders",
+      "quantity": 49.98,
+      "unit": "cum",
+      "rate": 1538.25,
+      "predecessors": [
+        "A08"
+      ],
+      "rate_placeholder_was": 1600,
+      "rate_basis": "dar_2023_near",
+      "rate_source": "DAR V2 23.6 (gravel 5-10 mm vs BOQ 10-20 mm)"
+    },
+    {
+      "activity_id": "A10",
+      "activity_class": "GRAVEL_FILL_SAND",
+      "description": "Coarse sand 1.5-3 mm over gravel",
+      "quantity": 49.98,
+      "unit": "cum",
+      "rate": 1538.25,
+      "predecessors": [
+        "A09"
+      ],
+      "rate_placeholder_was": 1300,
+      "rate_basis": "dar_2023_near",
+      "rate_source": "DAR V2 23.7 (sand 1.5-2 mm vs BOQ 1.5-3 mm)"
+    },
+    {
+      "activity_id": "A11",
+      "activity_class": "BOREWELL_DRILLING",
+      "description": "Drilling 400 mm dia bore, 0-30 m",
+      "quantity": 120,
+      "unit": "m",
+      "rate": 990.8,
+      "predecessors": [
+        "A02"
+      ],
+      "rate_placeholder_was": 1100,
+      "rate_basis": "dar_2023",
+      "rate_source": "DAR V2 23.1.1.3"
+    },
+    {
+      "activity_id": "A12",
+      "activity_class": "BOREWELL_PVC_SCREEN",
+      "description": "200 mm PVC slotted/screen pipe, supply & lowering",
+      "quantity": 120,
+      "unit": "m",
+      "rate": 1255.7,
+      "predecessors": [
+        "A11"
+      ],
+      "rate_placeholder_was": 950,
+      "rate_basis": "dar_2023",
+      "rate_source": "DAR V2 23.4.3"
+    },
+    {
+      "activity_id": "A13",
+      "activity_class": "BOREWELL_PEA_GRAVEL",
+      "description": "3-6 mm pea gravel packing around pipe/bore",
+      "quantity": 8,
+      "unit": "cum",
+      "rate": 2024.5,
+      "predecessors": [
+        "A12"
+      ],
+      "rate_placeholder_was": 2200,
+      "rate_basis": "dar_2023",
+      "rate_source": "DAR V2 23.8"
+    },
+    {
+      "activity_id": "A14",
+      "activity_class": "BOREWELL_CLEANING",
+      "description": "Bore well cleaning with air compressor",
+      "quantity": 8,
+      "unit": "hr",
+      "rate": 1085.05,
+      "predecessors": [
+        "A13"
+      ],
+      "rate_placeholder_was": 1500,
+      "rate_basis": "dar_2023",
+      "rate_source": "DAR V2 23.12"
+    },
+    {
+      "activity_id": "A15",
+      "activity_class": "STEEL_FOOTREST",
+      "description": "PVC coated MS foot rest 12 mm dia",
+      "quantity": 12,
+      "unit": "no",
+      "rate": 544.7,
+      "predecessors": [
+        "A06"
+      ],
+      "rate_placeholder_was": 350,
+      "rate_basis": "dar_2023_near",
+      "rate_source": "DAR V2 19.15.1 (DAR foot rest is 20 mm bar, BOQ is 12 mm PVC-coated)"
+    },
+    {
+      "activity_id": "A16",
+      "activity_class": "VENT_PIPE",
+      "description": "SITC vent pipe 160 mm with fittings",
+      "quantity": 64,
+      "unit": "m",
+      "rate": 600,
+      "predecessors": [
+        "A06"
+      ],
+      "rate_basis": "placeholder",
+      "rate_source": "no DAR item; placeholder estimate"
+    },
+    {
+      "activity_id": "A17",
+      "activity_class": "MANHOLE_RCC",
+      "description": "RCC manhole with frame 600x600, 6T",
+      "quantity": 5,
+      "unit": "no",
+      "rate": 6500,
+      "predecessors": [
+        "A06"
+      ],
+      "rate_basis": "placeholder",
+      "rate_source": "no DAR item; placeholder estimate"
+    },
+    {
+      "activity_id": "A18",
+      "activity_class": "MANHOLE_MS",
+      "description": "MS heavy duty manhole 600x1200",
+      "quantity": 1,
+      "unit": "no",
+      "rate": 14000,
+      "predecessors": [
+        "A06"
+      ],
+      "rate_basis": "placeholder",
+      "rate_source": "no DAR item; placeholder estimate"
+    }
+  ]
+}

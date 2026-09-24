@@ -1,0 +1,618 @@
+{
+  "project": "RWH Tank, Narsi Village Phase 1, Kosi Kalan, Mathura",
+  "project_type": "RAIN_WATER_HARVESTING",
+  "_note": "Normalized items (no predecessors) - the hand-off format from the normalization step. Rates for A01-A15 are CPWD DAR 2023 (Delhi, April 2023) final rates per unit, which include 18% GST, 15% contractor profit and overheads and 1% cess; A16-A18 have no DAR match and remain placeholder estimates. Replace with awarded BOQ rates when available.",
+  "activities": [
+    {
+      "activity_id": "MOB",
+      "activity_class": "MOBILISATION",
+      "description": "Mobilization & site setup",
+      "quantity": 1,
+      "unit": "LS",
+      "rate": 150000,
+      "fixed_days": 6,
+      "rate_basis": "rules",
+      "rate_source": "rule file synthetic activity MOBILISATION",
+      "structure": null,
+      "predecessors": []
+    },
+    {
+      "activity_id": "T1_A01",
+      "activity_class": "EXCAVATION_MECHANICAL",
+      "description": "Tank 1: Earth work in excavation, all kinds of soil",
+      "quantity": 1027.6,
+      "unit": "cum",
+      "rate": 177.5,
+      "rate_placeholder_was": 180,
+      "rate_basis": "dar_2023",
+      "rate_source": "DAR V1 2.6.1",
+      "structure": 1,
+      "predecessors": [
+        "MOB"
+      ]
+    },
+    {
+      "activity_id": "T2_A01",
+      "activity_class": "EXCAVATION_MECHANICAL",
+      "description": "Tank 2: Earth work in excavation, all kinds of soil",
+      "quantity": 1027.6,
+      "unit": "cum",
+      "rate": 177.5,
+      "rate_placeholder_was": 180,
+      "rate_basis": "dar_2023",
+      "rate_source": "DAR V1 2.6.1",
+      "structure": 2,
+      "predecessors": [
+        "MOB",
+        "T1_A02"
+      ]
+    },
+    {
+      "activity_id": "T1_A02",
+      "activity_class": "PCC_LEAN",
+      "description": "Tank 1: PCC 1:4:8 up to plinth",
+      "quantity": 10.65,
+      "unit": "cum",
+      "rate": 6812.0,
+      "rate_placeholder_was": 5500,
+      "rate_basis": "dar_2023",
+      "rate_source": "DAR V1 4.1.8",
+      "structure": 1,
+      "predecessors": [
+        "T1_A01"
+      ]
+    },
+    {
+      "activity_id": "T2_A02",
+      "activity_class": "PCC_LEAN",
+      "description": "Tank 2: PCC 1:4:8 up to plinth",
+      "quantity": 10.65,
+      "unit": "cum",
+      "rate": 6812.0,
+      "rate_placeholder_was": 5500,
+      "rate_basis": "dar_2023",
+      "rate_source": "DAR V1 4.1.8",
+      "structure": 2,
+      "predecessors": [
+        "T2_A01"
+      ]
+    },
+    {
+      "activity_id": "T1_A03",
+      "activity_class": "STEEL_REINFORCEMENT",
+      "description": "Tank 1: TMT Fe-550D reinforcement up to plinth",
+      "quantity": 14840.57,
+      "unit": "kg",
+      "rate": 107.85,
+      "rate_placeholder_was": 72,
+      "rate_basis": "dar_2023_near",
+      "rate_source": "DAR V1 5.22.6 (DAR grade is Fe-500D, BOQ says Fe-550D)",
+      "structure": 1,
+      "predecessors": [
+        "T1_A02"
+      ]
+    },
+    {
+      "activity_id": "T2_A03",
+      "activity_class": "STEEL_REINFORCEMENT",
+      "description": "Tank 2: TMT Fe-550D reinforcement up to plinth",
+      "quantity": 14840.57,
+      "unit": "kg",
+      "rate": 107.85,
+      "rate_placeholder_was": 72,
+      "rate_basis": "dar_2023_near",
+      "rate_source": "DAR V1 5.22.6 (DAR grade is Fe-500D, BOQ says Fe-550D)",
+      "structure": 2,
+      "predecessors": [
+        "T2_A02",
+        "T1_A03"
+      ]
+    },
+    {
+      "activity_id": "T1_A04",
+      "activity_class": "SHUTTERING_FOUNDATION",
+      "description": "Tank 1: Centering & shuttering - footings, walls, column bases",
+      "quantity": 608.96,
+      "unit": "sqm",
+      "rate": 961.3,
+      "rate_placeholder_was": 520,
+      "rate_basis": "dar_2023",
+      "rate_source": "DAR V1 4.3.3",
+      "structure": 1,
+      "predecessors": [
+        "T1_A02"
+      ]
+    },
+    {
+      "activity_id": "T2_A04",
+      "activity_class": "SHUTTERING_FOUNDATION",
+      "description": "Tank 2: Centering & shuttering - footings, walls, column bases",
+      "quantity": 608.96,
+      "unit": "sqm",
+      "rate": 961.3,
+      "rate_placeholder_was": 520,
+      "rate_basis": "dar_2023",
+      "rate_source": "DAR V1 4.3.3",
+      "structure": 2,
+      "predecessors": [
+        "T2_A02",
+        "T1_A04"
+      ]
+    },
+    {
+      "activity_id": "T1_A05",
+      "activity_class": "RCC_FOOTING",
+      "description": "Tank 1: M30 RMC concrete in foundation/footing",
+      "quantity": 50,
+      "unit": "cum",
+      "rate": 9655.7,
+      "rate_placeholder_was": 8500,
+      "rate_basis": "dar_2023",
+      "rate_source": "DAR V1 5.33.1.2",
+      "structure": 1,
+      "predecessors": [
+        "T1_A03",
+        "T1_A04"
+      ]
+    },
+    {
+      "activity_id": "T2_A05",
+      "activity_class": "RCC_FOOTING",
+      "description": "Tank 2: M30 RMC concrete in foundation/footing",
+      "quantity": 50,
+      "unit": "cum",
+      "rate": 9655.7,
+      "rate_placeholder_was": 8500,
+      "rate_basis": "dar_2023",
+      "rate_source": "DAR V1 5.33.1.2",
+      "structure": 2,
+      "predecessors": [
+        "T2_A03",
+        "T2_A04",
+        "T1_A05"
+      ]
+    },
+    {
+      "activity_id": "T1_A06",
+      "activity_class": "RCC_SUPERSTRUCTURE",
+      "description": "Tank 1: M30 RMC concrete in walls/columns/beams/slab",
+      "quantity": 104.53,
+      "unit": "cum",
+      "rate": 9655.7,
+      "rate_placeholder_was": 9200,
+      "rate_basis": "dar_2023",
+      "rate_source": "DAR V1 5.33.1.2",
+      "structure": 1,
+      "predecessors": [
+        "T1_A05"
+      ]
+    },
+    {
+      "activity_id": "T2_A06",
+      "activity_class": "RCC_SUPERSTRUCTURE",
+      "description": "Tank 2: M30 RMC concrete in walls/columns/beams/slab",
+      "quantity": 104.53,
+      "unit": "cum",
+      "rate": 9655.7,
+      "rate_placeholder_was": 9200,
+      "rate_basis": "dar_2023",
+      "rate_source": "DAR V1 5.33.1.2",
+      "structure": 2,
+      "predecessors": [
+        "T2_A05",
+        "T1_A06"
+      ]
+    },
+    {
+      "activity_id": "T1_CUR",
+      "activity_class": "CURING_DESHUTTERING",
+      "description": "Tank 1: Curing & deshuttering (7-day wait)",
+      "quantity": 1,
+      "unit": "LS",
+      "rate": 0,
+      "fixed_days": 7,
+      "rate_basis": "rules",
+      "rate_source": "rule file synthetic activity CURING_DESHUTTERING",
+      "structure": 1,
+      "predecessors": [
+        "T1_A06"
+      ]
+    },
+    {
+      "activity_id": "T2_CUR",
+      "activity_class": "CURING_DESHUTTERING",
+      "description": "Tank 2: Curing & deshuttering (7-day wait)",
+      "quantity": 1,
+      "unit": "LS",
+      "rate": 0,
+      "fixed_days": 7,
+      "rate_basis": "rules",
+      "rate_source": "rule file synthetic activity CURING_DESHUTTERING",
+      "structure": 2,
+      "predecessors": [
+        "T2_A06"
+      ]
+    },
+    {
+      "activity_id": "T1_A07",
+      "activity_class": "BACKFILLING",
+      "description": "Tank 1: Filling available excavated earth in layers",
+      "quantity": 205.52,
+      "unit": "cum",
+      "rate": 196.0,
+      "rate_placeholder_was": 150,
+      "rate_basis": "dar_2023",
+      "rate_source": "DAR V1 2.25",
+      "structure": 1,
+      "predecessors": [
+        "T1_CUR"
+      ]
+    },
+    {
+      "activity_id": "T2_A07",
+      "activity_class": "BACKFILLING",
+      "description": "Tank 2: Filling available excavated earth in layers",
+      "quantity": 205.52,
+      "unit": "cum",
+      "rate": 196.0,
+      "rate_placeholder_was": 150,
+      "rate_basis": "dar_2023",
+      "rate_source": "DAR V1 2.25",
+      "structure": 2,
+      "predecessors": [
+        "T2_CUR"
+      ]
+    },
+    {
+      "activity_id": "T1_A08",
+      "activity_class": "GRAVEL_FILL_BOULDER",
+      "description": "Tank 1: Stone boulders 6-15 cm in recharge pit",
+      "quantity": 49.98,
+      "unit": "cum",
+      "rate": 1509.8,
+      "rate_placeholder_was": 1400,
+      "rate_basis": "dar_2023_near",
+      "rate_source": "DAR V2 23.5 (boulder size 5-20 cm vs BOQ 6-15 cm)",
+      "structure": 1,
+      "predecessors": [
+        "T1_A07"
+      ]
+    },
+    {
+      "activity_id": "T2_A08",
+      "activity_class": "GRAVEL_FILL_BOULDER",
+      "description": "Tank 2: Stone boulders 6-15 cm in recharge pit",
+      "quantity": 49.98,
+      "unit": "cum",
+      "rate": 1509.8,
+      "rate_placeholder_was": 1400,
+      "rate_basis": "dar_2023_near",
+      "rate_source": "DAR V2 23.5 (boulder size 5-20 cm vs BOQ 6-15 cm)",
+      "structure": 2,
+      "predecessors": [
+        "T2_A07"
+      ]
+    },
+    {
+      "activity_id": "T1_A09",
+      "activity_class": "GRAVEL_FILL_GRAVEL",
+      "description": "Tank 1: Gravel 10-20 mm over boulders",
+      "quantity": 49.98,
+      "unit": "cum",
+      "rate": 1538.25,
+      "rate_placeholder_was": 1600,
+      "rate_basis": "dar_2023_near",
+      "rate_source": "DAR V2 23.6 (gravel 5-10 mm vs BOQ 10-20 mm)",
+      "structure": 1,
+      "predecessors": [
+        "T1_A08"
+      ]
+    },
+    {
+      "activity_id": "T2_A09",
+      "activity_class": "GRAVEL_FILL_GRAVEL",
+      "description": "Tank 2: Gravel 10-20 mm over boulders",
+      "quantity": 49.98,
+      "unit": "cum",
+      "rate": 1538.25,
+      "rate_placeholder_was": 1600,
+      "rate_basis": "dar_2023_near",
+      "rate_source": "DAR V2 23.6 (gravel 5-10 mm vs BOQ 10-20 mm)",
+      "structure": 2,
+      "predecessors": [
+        "T2_A08"
+      ]
+    },
+    {
+      "activity_id": "T1_A10",
+      "activity_class": "GRAVEL_FILL_SAND",
+      "description": "Tank 1: Coarse sand 1.5-3 mm over gravel",
+      "quantity": 49.98,
+      "unit": "cum",
+      "rate": 1538.25,
+      "rate_placeholder_was": 1300,
+      "rate_basis": "dar_2023_near",
+      "rate_source": "DAR V2 23.7 (sand 1.5-2 mm vs BOQ 1.5-3 mm)",
+      "structure": 1,
+      "predecessors": [
+        "T1_A09"
+      ]
+    },
+    {
+      "activity_id": "T2_A10",
+      "activity_class": "GRAVEL_FILL_SAND",
+      "description": "Tank 2: Coarse sand 1.5-3 mm over gravel",
+      "quantity": 49.98,
+      "unit": "cum",
+      "rate": 1538.25,
+      "rate_placeholder_was": 1300,
+      "rate_basis": "dar_2023_near",
+      "rate_source": "DAR V2 23.7 (sand 1.5-2 mm vs BOQ 1.5-3 mm)",
+      "structure": 2,
+      "predecessors": [
+        "T2_A09"
+      ]
+    },
+    {
+      "activity_id": "T1_A11",
+      "activity_class": "BOREWELL_DRILLING",
+      "description": "Tank 1: Drilling 400 mm dia bore, 0-30 m",
+      "quantity": 120,
+      "unit": "m",
+      "rate": 990.8,
+      "rate_placeholder_was": 1100,
+      "rate_basis": "dar_2023",
+      "rate_source": "DAR V2 23.1.1.3",
+      "structure": 1,
+      "predecessors": [
+        "MOB"
+      ]
+    },
+    {
+      "activity_id": "T2_A11",
+      "activity_class": "BOREWELL_DRILLING",
+      "description": "Tank 2: Drilling 400 mm dia bore, 0-30 m",
+      "quantity": 120,
+      "unit": "m",
+      "rate": 990.8,
+      "rate_placeholder_was": 1100,
+      "rate_basis": "dar_2023",
+      "rate_source": "DAR V2 23.1.1.3",
+      "structure": 2,
+      "predecessors": [
+        "MOB",
+        "T1_A11"
+      ]
+    },
+    {
+      "activity_id": "T1_A12",
+      "activity_class": "BOREWELL_PVC_SCREEN",
+      "description": "Tank 1: 200 mm PVC slotted/screen pipe, supply & lowering",
+      "quantity": 120,
+      "unit": "m",
+      "rate": 1255.7,
+      "rate_placeholder_was": 950,
+      "rate_basis": "dar_2023",
+      "rate_source": "DAR V2 23.4.3",
+      "structure": 1,
+      "predecessors": [
+        "T1_A11"
+      ]
+    },
+    {
+      "activity_id": "T2_A12",
+      "activity_class": "BOREWELL_PVC_SCREEN",
+      "description": "Tank 2: 200 mm PVC slotted/screen pipe, supply & lowering",
+      "quantity": 120,
+      "unit": "m",
+      "rate": 1255.7,
+      "rate_placeholder_was": 950,
+      "rate_basis": "dar_2023",
+      "rate_source": "DAR V2 23.4.3",
+      "structure": 2,
+      "predecessors": [
+        "T2_A11"
+      ]
+    },
+    {
+      "activity_id": "T1_A13",
+      "activity_class": "BOREWELL_PEA_GRAVEL",
+      "description": "Tank 1: 3-6 mm pea gravel packing around pipe/bore",
+      "quantity": 8,
+      "unit": "cum",
+      "rate": 2024.5,
+      "rate_placeholder_was": 2200,
+      "rate_basis": "dar_2023",
+      "rate_source": "DAR V2 23.8",
+      "structure": 1,
+      "predecessors": [
+        "T1_A12"
+      ]
+    },
+    {
+      "activity_id": "T2_A13",
+      "activity_class": "BOREWELL_PEA_GRAVEL",
+      "description": "Tank 2: 3-6 mm pea gravel packing around pipe/bore",
+      "quantity": 8,
+      "unit": "cum",
+      "rate": 2024.5,
+      "rate_placeholder_was": 2200,
+      "rate_basis": "dar_2023",
+      "rate_source": "DAR V2 23.8",
+      "structure": 2,
+      "predecessors": [
+        "T2_A12"
+      ]
+    },
+    {
+      "activity_id": "T1_A14",
+      "activity_class": "BOREWELL_CLEANING",
+      "description": "Tank 1: Bore well cleaning with air compressor",
+      "quantity": 8,
+      "unit": "hr",
+      "rate": 1085.05,
+      "rate_placeholder_was": 1500,
+      "rate_basis": "dar_2023",
+      "rate_source": "DAR V2 23.12",
+      "structure": 1,
+      "predecessors": [
+        "T1_A13"
+      ]
+    },
+    {
+      "activity_id": "T2_A14",
+      "activity_class": "BOREWELL_CLEANING",
+      "description": "Tank 2: Bore well cleaning with air compressor",
+      "quantity": 8,
+      "unit": "hr",
+      "rate": 1085.05,
+      "rate_placeholder_was": 1500,
+      "rate_basis": "dar_2023",
+      "rate_source": "DAR V2 23.12",
+      "structure": 2,
+      "predecessors": [
+        "T2_A13"
+      ]
+    },
+    {
+      "activity_id": "T1_A16",
+      "activity_class": "VENT_PIPE",
+      "description": "Tank 1: SITC vent pipe 160 mm with fittings",
+      "quantity": 64,
+      "unit": "m",
+      "rate": 600,
+      "rate_basis": "placeholder",
+      "rate_source": "no DAR item; placeholder estimate",
+      "structure": 1,
+      "predecessors": [
+        "T1_A12"
+      ]
+    },
+    {
+      "activity_id": "T2_A16",
+      "activity_class": "VENT_PIPE",
+      "description": "Tank 2: SITC vent pipe 160 mm with fittings",
+      "quantity": 64,
+      "unit": "m",
+      "rate": 600,
+      "rate_basis": "placeholder",
+      "rate_source": "no DAR item; placeholder estimate",
+      "structure": 2,
+      "predecessors": [
+        "T2_A12"
+      ]
+    },
+    {
+      "activity_id": "T1_A15",
+      "activity_class": "STEEL_FOOTREST",
+      "description": "Tank 1: PVC coated MS foot rest 12 mm dia",
+      "quantity": 12,
+      "unit": "no",
+      "rate": 544.7,
+      "rate_placeholder_was": 350,
+      "rate_basis": "dar_2023_near",
+      "rate_source": "DAR V2 19.15.1 (DAR foot rest is 20 mm bar, BOQ is 12 mm PVC-coated)",
+      "structure": 1,
+      "predecessors": [
+        "T1_A06"
+      ]
+    },
+    {
+      "activity_id": "T2_A15",
+      "activity_class": "STEEL_FOOTREST",
+      "description": "Tank 2: PVC coated MS foot rest 12 mm dia",
+      "quantity": 12,
+      "unit": "no",
+      "rate": 544.7,
+      "rate_placeholder_was": 350,
+      "rate_basis": "dar_2023_near",
+      "rate_source": "DAR V2 19.15.1 (DAR foot rest is 20 mm bar, BOQ is 12 mm PVC-coated)",
+      "structure": 2,
+      "predecessors": [
+        "T2_A06"
+      ]
+    },
+    {
+      "activity_id": "T1_A17",
+      "activity_class": "MANHOLE_RCC",
+      "description": "Tank 1: RCC manhole with frame 600x600, 6T",
+      "quantity": 5,
+      "unit": "no",
+      "rate": 6500,
+      "rate_basis": "placeholder",
+      "rate_source": "no DAR item; placeholder estimate",
+      "structure": 1,
+      "predecessors": [
+        "T1_A06"
+      ]
+    },
+    {
+      "activity_id": "T2_A17",
+      "activity_class": "MANHOLE_RCC",
+      "description": "Tank 2: RCC manhole with frame 600x600, 6T",
+      "quantity": 5,
+      "unit": "no",
+      "rate": 6500,
+      "rate_basis": "placeholder",
+      "rate_source": "no DAR item; placeholder estimate",
+      "structure": 2,
+      "predecessors": [
+        "T2_A06"
+      ]
+    },
+    {
+      "activity_id": "T1_A18",
+      "activity_class": "MANHOLE_MS",
+      "description": "Tank 1: MS heavy duty manhole 600x1200",
+      "quantity": 1,
+      "unit": "no",
+      "rate": 14000,
+      "rate_basis": "placeholder",
+      "rate_source": "no DAR item; placeholder estimate",
+      "structure": 1,
+      "predecessors": [
+        "T1_A06"
+      ]
+    },
+    {
+      "activity_id": "T2_A18",
+      "activity_class": "MANHOLE_MS",
+      "description": "Tank 2: MS heavy duty manhole 600x1200",
+      "quantity": 1,
+      "unit": "no",
+      "rate": 14000,
+      "rate_basis": "placeholder",
+      "rate_source": "no DAR item; placeholder estimate",
+      "structure": 2,
+      "predecessors": [
+        "T2_A06"
+      ]
+    },
+    {
+      "activity_id": "TEST",
+      "activity_class": "TESTING_HANDOVER",
+      "description": "Joint testing & handover",
+      "quantity": 1,
+      "unit": "LS",
+      "rate": 100000,
+      "fixed_days": 6,
+      "rate_basis": "rules",
+      "rate_source": "rule file synthetic activity TESTING_HANDOVER",
+      "structure": null,
+      "predecessors": [
+        "T1_A10",
+        "T2_A10",
+        "T1_A14",
+        "T2_A14",
+        "T1_A16",
+        "T2_A16",
+        "T1_A15",
+        "T2_A15",
+        "T1_A17",
+        "T2_A17",
+        "T1_A18",
+        "T2_A18"
+      ]
+    }
+  ]
+}

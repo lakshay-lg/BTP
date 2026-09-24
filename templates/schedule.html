@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Schedule &amp; cash flow · BuildFlow</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="/static/style.css"><link rel="stylesheet" href="/static/overrides.css">
+  <link rel="stylesheet" href="/static/schedule.css">
+</head>
+<body class="schedule-page">
+  <header class="topbar"><a class="brand" href="/">BuildFlow <small>Schedule &amp; cash flow</small></a><a href="/workbench" class="back-link">Standard workbench</a></header>
+  <main class="sched-main">
+    <section class="sched-controls" aria-label="Schedule settings">
+      <div class="sched-field"><label for="startDate">Project start</label><input id="startDate" type="date" value="2026-10-01"></div>
+      <div class="sched-field"><label for="workweek">Working days / week</label><select id="workweek"><option value="6" selected>6 (Sunday off)</option><option value="5">5</option><option value="7">7</option></select></div>
+      <div class="sched-field"><label for="retention">Retention %</label><input id="retention" type="number" min="0" max="100" step="0.5" value="5"></div>
+      <div class="sched-field"><label for="lag">Payment lag (months)</label><input id="lag" type="number" min="0" max="12" step="1" value="1"></div>
+      <div class="sched-field"><label for="advance">Mobilisation advance %</label><input id="advance" type="number" min="0" max="100" step="1" value="20"></div>
+      <div class="sched-field"><label for="indirect">Site overhead %</label><input id="indirect" type="number" min="0" max="100" step="0.5" value="0"></div>
+      <div class="sched-actions">
+        <button id="runDemo" type="button">Run RWH demo</button>
+        <button id="runTwoTank" type="button">Two-tank demo</button>
+        <label class="sched-upload" for="precedenceFile">Upload precedence JSON<input id="precedenceFile" type="file" accept="application/json,.json"></label>
+      </div>
+    </section>
+    <p id="status" class="sched-status" role="status" aria-live="polite">Run the demo or upload the activity/precedence JSON to build the schedule.</p>
+    <p id="banner" class="sched-banner hidden"></p>
+    <section id="metrics" class="sched-metrics hidden" aria-label="Summary"></section>
+    <section id="results" class="sched-results hidden">
+      <div class="tabs" role="tablist">
+        <button class="active" data-tab="gantt" role="tab">Gantt</button>
+        <button data-tab="monthly" role="tab">Monthly allocation</button>
+        <button data-tab="scurve" role="tab">S-curve</button>
+        <button data-tab="cash" role="tab">Cash flow</button>
+        <button data-tab="table" role="tab">Activity table</button>
+      </div>
+      <div id="tab-gantt" class="tab-panel active"><div class="chart-box" id="ganttBox"></div><p class="sched-legend"><span class="lg crit"></span>Critical <span class="lg norm"></span>Non-critical <span class="lg dep"></span>Dependency</p></div>
+      <div id="tab-monthly" class="tab-panel"><div class="chart-box" id="monthlyBox"></div><div class="table-wrap" id="allocTable"></div></div>
+      <div id="tab-scurve" class="tab-panel"><div class="chart-box" id="sBox"></div></div>
+      <div id="tab-cash" class="tab-panel"><h3 class="sched-h">Expenditure vs receipts</h3><div class="chart-box" id="cashBox"></div><h3 class="sched-h">Cumulative net cash (below zero = contractor is funding the work)</h3><div class="chart-box" id="netBox"></div></div>
+      <div id="tab-table" class="tab-panel"><div class="table-wrap" id="actTable"></div></div>
+    </section>
+  </main>
+  <div id="toast" class="toast hidden" role="alert"></div>
+  <script src="/static/schedule.js"></script>
+</body>
+</html>

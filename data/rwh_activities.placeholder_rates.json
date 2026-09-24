@@ -1,0 +1,204 @@
+{
+  "project": "RWH Tank, Narsi Village Phase 1, Kosi Kalan, Mathura",
+  "project_type": "RAIN_WATER_HARVESTING",
+  "_note": "rate values are PLACEHOLDER estimates (BOQ rate columns are blank in source) - replace with awarded rates",
+  "activities": [
+    {
+      "activity_id": "A01",
+      "activity_class": "EXCAVATION_MECHANICAL",
+      "description": "Earth work in excavation, all kinds of soil",
+      "quantity": 1027.6,
+      "unit": "cum",
+      "rate": 180,
+      "predecessors": []
+    },
+    {
+      "activity_id": "A02",
+      "activity_class": "PCC_LEAN",
+      "description": "PCC 1:4:8 up to plinth",
+      "quantity": 10.65,
+      "unit": "cum",
+      "rate": 5500,
+      "predecessors": [
+        "A01"
+      ]
+    },
+    {
+      "activity_id": "A03",
+      "activity_class": "STEEL_REINFORCEMENT",
+      "description": "TMT Fe-550D reinforcement up to plinth",
+      "quantity": 14840.57,
+      "unit": "kg",
+      "rate": 72,
+      "predecessors": [
+        "A02"
+      ]
+    },
+    {
+      "activity_id": "A04",
+      "activity_class": "SHUTTERING_FOUNDATION",
+      "description": "Centering & shuttering - footings, walls, column bases",
+      "quantity": 608.96,
+      "unit": "sqm",
+      "rate": 520,
+      "predecessors": [
+        "A02"
+      ]
+    },
+    {
+      "activity_id": "A05",
+      "activity_class": "RCC_FOOTING",
+      "description": "M30 RMC concrete in foundation/footing",
+      "quantity": 50,
+      "unit": "cum",
+      "rate": 8500,
+      "predecessors": [
+        "A03",
+        "A04"
+      ]
+    },
+    {
+      "activity_id": "A06",
+      "activity_class": "RCC_SUPERSTRUCTURE",
+      "description": "M30 RMC concrete in walls/columns/beams/slab",
+      "quantity": 104.53,
+      "unit": "cum",
+      "rate": 9200,
+      "predecessors": [
+        "A05"
+      ]
+    },
+    {
+      "activity_id": "A07",
+      "activity_class": "BACKFILLING",
+      "description": "Filling available excavated earth in layers",
+      "quantity": 205.52,
+      "unit": "cum",
+      "rate": 150,
+      "predecessors": [
+        "A06"
+      ]
+    },
+    {
+      "activity_id": "A08",
+      "activity_class": "GRAVEL_FILL_BOULDER",
+      "description": "Stone boulders 6-15 cm in recharge pit",
+      "quantity": 49.98,
+      "unit": "cum",
+      "rate": 1400,
+      "predecessors": [
+        "A06"
+      ]
+    },
+    {
+      "activity_id": "A09",
+      "activity_class": "GRAVEL_FILL_GRAVEL",
+      "description": "Gravel 10-20 mm over boulders",
+      "quantity": 49.98,
+      "unit": "cum",
+      "rate": 1600,
+      "predecessors": [
+        "A08"
+      ]
+    },
+    {
+      "activity_id": "A10",
+      "activity_class": "GRAVEL_FILL_SAND",
+      "description": "Coarse sand 1.5-3 mm over gravel",
+      "quantity": 49.98,
+      "unit": "cum",
+      "rate": 1300,
+      "predecessors": [
+        "A09"
+      ]
+    },
+    {
+      "activity_id": "A11",
+      "activity_class": "BOREWELL_DRILLING",
+      "description": "Drilling 400 mm dia bore, 0-30 m",
+      "quantity": 120,
+      "unit": "m",
+      "rate": 1100,
+      "predecessors": [
+        "A02"
+      ]
+    },
+    {
+      "activity_id": "A12",
+      "activity_class": "BOREWELL_PVC_SCREEN",
+      "description": "200 mm PVC slotted/screen pipe, supply & lowering",
+      "quantity": 120,
+      "unit": "m",
+      "rate": 950,
+      "predecessors": [
+        "A11"
+      ]
+    },
+    {
+      "activity_id": "A13",
+      "activity_class": "BOREWELL_PEA_GRAVEL",
+      "description": "3-6 mm pea gravel packing around pipe/bore",
+      "quantity": 8,
+      "unit": "cum",
+      "rate": 2200,
+      "predecessors": [
+        "A12"
+      ]
+    },
+    {
+      "activity_id": "A14",
+      "activity_class": "BOREWELL_CLEANING",
+      "description": "Bore well cleaning with air compressor",
+      "quantity": 8,
+      "unit": "hr",
+      "rate": 1500,
+      "predecessors": [
+        "A13"
+      ]
+    },
+    {
+      "activity_id": "A15",
+      "activity_class": "STEEL_FOOTREST",
+      "description": "PVC coated MS foot rest 12 mm dia",
+      "quantity": 12,
+      "unit": "no",
+      "rate": 350,
+      "predecessors": [
+        "A06"
+      ]
+    },
+    {
+      "activity_id": "A16",
+      "activity_class": "VENT_PIPE",
+      "description": "SITC vent pipe 160 mm with fittings",
+      "quantity": 64,
+      "unit": "m",
+      "rate": 600,
+      "predecessors": [
+        "A06"
+      ]
+    },
+    {
+      "activity_id": "A17",
+      "activity_class": "MANHOLE_RCC",
+      "description": "RCC manhole with frame 600x600, 6T",
+      "quantity": 5,
+      "unit": "no",
+      "rate": 6500,
+      "predecessors": [
+        "A06"
+      ]
+    },
+    {
+      "activity_id": "A18",
+      "activity_class": "MANHOLE_MS",
+      "description": "MS heavy duty manhole 600x1200",
+      "quantity": 1,
+      "unit": "no",
+      "rate": 14000,
+      "predecessors": [
+        "A06"
+      ]
+    }
+  ]
+}

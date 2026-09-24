@@ -1,0 +1,678 @@
+{
+  "project": "RWH Tank, Narsi Village Phase 1, Kosi Kalan, Mathura",
+  "project_type": "RAIN_WATER_HARVESTING",
+  "_note": "rate values are PLACEHOLDER estimates (BOQ rate columns are blank in source) - replace with awarded rates",
+  "activities": [
+    {
+      "activity_id": "A01",
+      "activity_class": "EXCAVATION_MECHANICAL",
+      "description": "Earth work in excavation, all kinds of soil",
+      "quantity": 1027.6,
+      "unit": "cum",
+      "rate": 180,
+      "predecessors": [],
+      "productivity": {
+        "source": "DAR V1 2.6.1",
+        "match_quality": "exact",
+        "unit": "cum",
+        "coefficients_days_per_unit": {
+          "excavator": 0.008,
+          "loader": 0.008,
+          "mate": 0.004,
+          "coolie": 0.006
+        },
+        "default_gang": {
+          "excavator": 1,
+          "loader": 1,
+          "mate": 1,
+          "coolie": 1
+        },
+        "output_per_gang_day": 125.0,
+        "note": "Coefficients are per 10 cum in DAR (0.08 machine-day). DAR text also says 30 cum/hr, which does not agree with 0.08 day/10 cum; coefficient used."
+      },
+      "derived": {
+        "resource_days": {
+          "excavator": 8.22,
+          "loader": 8.22,
+          "mate": 4.11,
+          "coolie": 6.17
+        },
+        "limiting_resource": "excavator"
+      },
+      "duration_days": 9,
+      "gangs_used": 1,
+      "duration_basis": "computed"
+    },
+    {
+      "activity_id": "A02",
+      "activity_class": "PCC_LEAN",
+      "description": "PCC 1:4:8 up to plinth",
+      "quantity": 10.65,
+      "unit": "cum",
+      "rate": 5500,
+      "predecessors": [
+        "A01"
+      ],
+      "productivity": {
+        "source": "DAR V1 4.1.8 = IS 7272 ii(d)(2)",
+        "match_quality": "exact",
+        "unit": "cum",
+        "coefficients_days_per_unit": {
+          "mason": 0.1,
+          "beldar": 1.63,
+          "bhisti": 0.7,
+          "mixer": 0.07,
+          "vibrator": 0.07
+        },
+        "default_gang": {
+          "mason": 1,
+          "beldar": 7,
+          "bhisti": 3,
+          "mixer": 1,
+          "vibrator": 1
+        },
+        "output_per_gang_day": 4.29,
+        "note": ""
+      },
+      "derived": {
+        "resource_days": {
+          "mason": 1.07,
+          "beldar": 17.36,
+          "bhisti": 7.46,
+          "mixer": 0.75,
+          "vibrator": 0.75
+        },
+        "limiting_resource": "bhisti"
+      },
+      "duration_days": 3,
+      "gangs_used": 1,
+      "duration_basis": "computed"
+    },
+    {
+      "activity_id": "A03",
+      "activity_class": "STEEL_REINFORCEMENT",
+      "description": "TMT Fe-550D reinforcement up to plinth",
+      "quantity": 14840.57,
+      "unit": "kg",
+      "rate": 72,
+      "predecessors": [
+        "A02"
+      ],
+      "productivity": {
+        "source": "DAR V1 5.22.6 = IS 7272 vi",
+        "match_quality": "exact",
+        "unit": "kg",
+        "coefficients_days_per_unit": {
+          "bar_bender": 0.01,
+          "beldar": 0.01
+        },
+        "default_gang": {
+          "bar_bender": 5,
+          "beldar": 5
+        },
+        "output_per_gang_day": 500.0,
+        "note": "1 quintal (100 kg) per bar-bender + mazdoor pair per day. DAR grade is Fe-500D; BOQ says Fe-550D."
+      },
+      "derived": {
+        "resource_days": {
+          "bar_bender": 148.41,
+          "beldar": 148.41
+        },
+        "limiting_resource": "bar_bender"
+      },
+      "duration_days": 30,
+      "gangs_used": 1,
+      "duration_basis": "computed"
+    },
+    {
+      "activity_id": "A04",
+      "activity_class": "SHUTTERING_FOUNDATION",
+      "description": "Centering & shuttering - footings, walls, column bases",
+      "quantity": 608.96,
+      "unit": "sqm",
+      "rate": 520,
+      "predecessors": [
+        "A02"
+      ],
+      "productivity": {
+        "source": "DAR V1 4.3.3 (IS 7272 v(a) as cross-check)",
+        "match_quality": "exact",
+        "unit": "sqm",
+        "coefficients_days_per_unit": {
+          "fitter": 0.22222,
+          "beldar": 0.44444
+        },
+        "default_gang": {
+          "fitter": 2,
+          "beldar": 4
+        },
+        "output_per_gang_day": 9.0,
+        "note": "DAR item is a steel-panel system. IS 7272 wooden formwork gives carpenter 0.25 + mazdoor 0.20 per sqm."
+      },
+      "derived": {
+        "resource_days": {
+          "fitter": 135.32,
+          "beldar": 270.65
+        },
+        "limiting_resource": "fitter"
+      },
+      "duration_days": 68,
+      "gangs_used": 1,
+      "duration_basis": "computed"
+    },
+    {
+      "activity_id": "A05",
+      "activity_class": "RCC_FOOTING",
+      "description": "M30 RMC concrete in foundation/footing",
+      "quantity": 50,
+      "unit": "cum",
+      "rate": 8500,
+      "predecessors": [
+        "A03",
+        "A04"
+      ],
+      "productivity": {
+        "source": "DAR V1 5.33.1.2 = IS 7272 ii(f)",
+        "match_quality": "exact",
+        "unit": "cum",
+        "coefficients_days_per_unit": {
+          "mason": 0.17,
+          "beldar": 2.0,
+          "bhisti": 0.9,
+          "vibrator": 0.07
+        },
+        "default_gang": {
+          "mason": 1,
+          "beldar": 12,
+          "bhisti": 5,
+          "vibrator": 1
+        },
+        "output_per_gang_day": 5.56,
+        "note": "RMC production and pumping are plant services, not limiting."
+      },
+      "derived": {
+        "resource_days": {
+          "mason": 8.5,
+          "beldar": 100.0,
+          "bhisti": 45.0,
+          "vibrator": 3.5
+        },
+        "limiting_resource": "bhisti"
+      },
+      "duration_days": 9,
+      "gangs_used": 1,
+      "duration_basis": "computed"
+    },
+    {
+      "activity_id": "A06",
+      "activity_class": "RCC_SUPERSTRUCTURE",
+      "description": "M30 RMC concrete in walls/columns/beams/slab",
+      "quantity": 104.53,
+      "unit": "cum",
+      "rate": 9200,
+      "predecessors": [
+        "A05"
+      ],
+      "productivity": {
+        "source": "DAR V1 5.33.1.2 (IS 7272 ii(g),(k) is higher)",
+        "match_quality": "exact",
+        "unit": "cum",
+        "coefficients_days_per_unit": {
+          "mason": 0.17,
+          "beldar": 2.0,
+          "bhisti": 0.9,
+          "vibrator": 0.07
+        },
+        "default_gang": {
+          "mason": 1,
+          "beldar": 12,
+          "bhisti": 5,
+          "vibrator": 1
+        },
+        "output_per_gang_day": 5.56,
+        "note": "IS 7272 gives mazdoor 2.50 (slab) to 3.50 (columns), so this may be optimistic."
+      },
+      "derived": {
+        "resource_days": {
+          "mason": 17.77,
+          "beldar": 209.06,
+          "bhisti": 94.08,
+          "vibrator": 7.32
+        },
+        "limiting_resource": "bhisti"
+      },
+      "duration_days": 19,
+      "gangs_used": 1,
+      "duration_basis": "computed"
+    },
+    {
+      "activity_id": "A07",
+      "activity_class": "BACKFILLING",
+      "description": "Filling available excavated earth in layers",
+      "quantity": 205.52,
+      "unit": "cum",
+      "rate": 150,
+      "predecessors": [
+        "A06"
+      ],
+      "productivity": {
+        "source": "IS 7272 i(f) as amended 1979 (+ i(e) for 50 m lead)",
+        "match_quality": "exact",
+        "unit": "cum",
+        "coefficients_days_per_unit": {
+          "mate": 0.03,
+          "mazdoor": 0.34,
+          "bhisti": 0.02
+        },
+        "default_gang": {
+          "mate": 2,
+          "mazdoor": 17,
+          "bhisti": 1
+        },
+        "output_per_gang_day": 50.0,
+        "note": "Amended: 0.22 mazdoor for 25 m lead + 0.12 per extra 25 m. DAR 2.25 gives about 0.18 labour-day/cum, but that parse looked unreliable."
+      },
+      "derived": {
+        "resource_days": {
+          "mate": 6.17,
+          "mazdoor": 69.88,
+          "bhisti": 4.11
+        },
+        "limiting_resource": "mazdoor"
+      },
+      "duration_days": 5,
+      "gangs_used": 1,
+      "duration_basis": "computed"
+    },
+    {
+      "activity_id": "A08",
+      "activity_class": "GRAVEL_FILL_BOULDER",
+      "description": "Stone boulders 6-15 cm in recharge pit",
+      "quantity": 49.98,
+      "unit": "cum",
+      "rate": 1400,
+      "predecessors": [
+        "A06"
+      ],
+      "productivity": {
+        "source": "DAR V2 23.5",
+        "match_quality": "near",
+        "unit": "cum",
+        "coefficients_days_per_unit": {
+          "beldar": 0.25
+        },
+        "default_gang": {
+          "beldar": 8
+        },
+        "output_per_gang_day": 32.0,
+        "note": "DAR boulder size 5-20 cm; BOQ 6-15 cm."
+      },
+      "derived": {
+        "resource_days": {
+          "beldar": 12.49
+        },
+        "limiting_resource": "beldar"
+      },
+      "duration_days": 2,
+      "gangs_used": 1,
+      "duration_basis": "computed"
+    },
+    {
+      "activity_id": "A09",
+      "activity_class": "GRAVEL_FILL_GRAVEL",
+      "description": "Gravel 10-20 mm over boulders",
+      "quantity": 49.98,
+      "unit": "cum",
+      "rate": 1600,
+      "predecessors": [
+        "A08"
+      ],
+      "productivity": {
+        "source": "DAR V2 23.6",
+        "match_quality": "near",
+        "unit": "cum",
+        "coefficients_days_per_unit": {
+          "beldar": 0.25
+        },
+        "default_gang": {
+          "beldar": 8
+        },
+        "output_per_gang_day": 32.0,
+        "note": "DAR gravel 5-10 mm; BOQ 10-20 mm."
+      },
+      "derived": {
+        "resource_days": {
+          "beldar": 12.49
+        },
+        "limiting_resource": "beldar"
+      },
+      "duration_days": 2,
+      "gangs_used": 1,
+      "duration_basis": "computed"
+    },
+    {
+      "activity_id": "A10",
+      "activity_class": "GRAVEL_FILL_SAND",
+      "description": "Coarse sand 1.5-3 mm over gravel",
+      "quantity": 49.98,
+      "unit": "cum",
+      "rate": 1300,
+      "predecessors": [
+        "A09"
+      ],
+      "productivity": {
+        "source": "DAR V2 23.7",
+        "match_quality": "near",
+        "unit": "cum",
+        "coefficients_days_per_unit": {
+          "beldar": 0.25
+        },
+        "default_gang": {
+          "beldar": 8
+        },
+        "output_per_gang_day": 32.0,
+        "note": "DAR coarse sand 1.5-2 mm; BOQ 1.5-3 mm."
+      },
+      "derived": {
+        "resource_days": {
+          "beldar": 12.49
+        },
+        "limiting_resource": "beldar"
+      },
+      "duration_days": 2,
+      "gangs_used": 1,
+      "duration_basis": "computed"
+    },
+    {
+      "activity_id": "A11",
+      "activity_class": "BOREWELL_DRILLING",
+      "description": "Drilling 400 mm dia bore, 0-30 m",
+      "quantity": 120,
+      "unit": "m",
+      "rate": 1100,
+      "predecessors": [
+        "A02"
+      ],
+      "productivity": {
+        "source": "DAR V2 23.1.1.3",
+        "match_quality": "exact",
+        "unit": "m",
+        "coefficients_days_per_unit": {
+          "rig": 0.04,
+          "truck": 0.01716,
+          "beldar": 0.24,
+          "mistry": 0.04,
+          "chowkidar": 0.04
+        },
+        "default_gang": {
+          "rig": 1,
+          "truck": 1,
+          "beldar": 6,
+          "mistry": 1,
+          "chowkidar": 1
+        },
+        "output_per_gang_day": 25.0,
+        "note": "25 m per rig-day, including shifting; 400 mm dia, soil, up to 90 m."
+      },
+      "derived": {
+        "resource_days": {
+          "rig": 4.8,
+          "truck": 2.06,
+          "beldar": 28.8,
+          "mistry": 4.8,
+          "chowkidar": 4.8
+        },
+        "limiting_resource": "rig"
+      },
+      "duration_days": 5,
+      "gangs_used": 1,
+      "duration_basis": "computed"
+    },
+    {
+      "activity_id": "A12",
+      "activity_class": "BOREWELL_PVC_SCREEN",
+      "description": "200 mm PVC slotted/screen pipe, supply & lowering",
+      "quantity": 120,
+      "unit": "m",
+      "rate": 950,
+      "predecessors": [
+        "A11"
+      ],
+      "productivity": {
+        "source": "DAR V2 23.4.3",
+        "match_quality": "exact",
+        "unit": "m",
+        "coefficients_days_per_unit": {
+          "beldar": 0.005,
+          "coolie": 0.005
+        },
+        "default_gang": {
+          "beldar": 2,
+          "coolie": 2
+        },
+        "output_per_gang_day": 400.0,
+        "note": "Lowering only; in practice waits on drilling."
+      },
+      "derived": {
+        "resource_days": {
+          "beldar": 0.6,
+          "coolie": 0.6
+        },
+        "limiting_resource": "beldar"
+      },
+      "duration_days": 1,
+      "gangs_used": 1,
+      "duration_basis": "computed"
+    },
+    {
+      "activity_id": "A13",
+      "activity_class": "BOREWELL_PEA_GRAVEL",
+      "description": "3-6 mm pea gravel packing around pipe/bore",
+      "quantity": 8,
+      "unit": "cum",
+      "rate": 2200,
+      "predecessors": [
+        "A12"
+      ],
+      "productivity": {
+        "source": "DAR V2 23.8",
+        "match_quality": "exact",
+        "unit": "cum",
+        "coefficients_days_per_unit": {
+          "beldar": 0.3
+        },
+        "default_gang": {
+          "beldar": 4
+        },
+        "output_per_gang_day": 13.33,
+        "note": ""
+      },
+      "derived": {
+        "resource_days": {
+          "beldar": 2.4
+        },
+        "limiting_resource": "beldar"
+      },
+      "duration_days": 1,
+      "gangs_used": 1,
+      "duration_basis": "computed"
+    },
+    {
+      "activity_id": "A14",
+      "activity_class": "BOREWELL_CLEANING",
+      "description": "Bore well cleaning with air compressor",
+      "quantity": 8,
+      "unit": "hr",
+      "rate": 1500,
+      "predecessors": [
+        "A13"
+      ],
+      "productivity": {
+        "source": "DAR V2 23.12",
+        "match_quality": "exact",
+        "unit": "hr",
+        "coefficients_days_per_unit": {
+          "compressor": 0.125
+        },
+        "default_gang": {
+          "compressor": 1
+        },
+        "output_per_gang_day": 8.0,
+        "note": "One compressor-day per 8 hours of cleaning."
+      },
+      "derived": {
+        "resource_days": {
+          "compressor": 1.0
+        },
+        "limiting_resource": "compressor"
+      },
+      "duration_days": 1,
+      "gangs_used": 1,
+      "duration_basis": "computed"
+    },
+    {
+      "activity_id": "A15",
+      "activity_class": "STEEL_FOOTREST",
+      "description": "PVC coated MS foot rest 12 mm dia",
+      "quantity": 12,
+      "unit": "no",
+      "rate": 350,
+      "predecessors": [
+        "A06"
+      ],
+      "productivity": {
+        "source": "DAR V2 19.15.1",
+        "match_quality": "exact",
+        "unit": "no",
+        "coefficients_days_per_unit": {
+          "blacksmith": 0.1,
+          "beldar": 0.15,
+          "mason": 0.04
+        },
+        "default_gang": {
+          "blacksmith": 1,
+          "beldar": 1,
+          "mason": 1
+        },
+        "output_per_gang_day": 6.67,
+        "note": "Fabrication plus fixing in manholes with concrete blocks."
+      },
+      "derived": {
+        "resource_days": {
+          "blacksmith": 1.2,
+          "beldar": 1.8,
+          "mason": 0.48
+        },
+        "limiting_resource": "beldar"
+      },
+      "duration_days": 2,
+      "gangs_used": 1,
+      "duration_basis": "computed"
+    },
+    {
+      "activity_id": "A16",
+      "activity_class": "VENT_PIPE",
+      "description": "SITC vent pipe 160 mm with fittings",
+      "quantity": 64,
+      "unit": "m",
+      "rate": 600,
+      "predecessors": [
+        "A06"
+      ],
+      "productivity": {
+        "source": "DAR V2 17.35.1.2",
+        "match_quality": "proxy",
+        "unit": "m",
+        "coefficients_days_per_unit": {
+          "fitter": 0.0249,
+          "bandhani": 0.01245,
+          "beldar": 0.0492
+        },
+        "default_gang": {
+          "fitter": 1,
+          "bandhani": 1,
+          "beldar": 2
+        },
+        "output_per_gang_day": 40.17,
+        "note": "Proxy: cast-iron soil/waste/vent pipe, not 160 mm PVC vent pipe with cowl and tee."
+      },
+      "derived": {
+        "resource_days": {
+          "fitter": 1.59,
+          "bandhani": 0.8,
+          "beldar": 3.15
+        },
+        "limiting_resource": "fitter"
+      },
+      "duration_days": 2,
+      "gangs_used": 1,
+      "duration_basis": "computed"
+    },
+    {
+      "activity_id": "A17",
+      "activity_class": "MANHOLE_RCC",
+      "description": "RCC manhole with frame 600x600, 6T",
+      "quantity": 5,
+      "unit": "no",
+      "rate": 6500,
+      "predecessors": [
+        "A06"
+      ],
+      "productivity": {
+        "source": "DAR V2 19.18.3",
+        "match_quality": "proxy",
+        "unit": "no",
+        "coefficients_days_per_unit": {
+          "beldar": 0.12
+        },
+        "default_gang": {
+          "beldar": 2
+        },
+        "output_per_gang_day": 16.67,
+        "note": "Proxy: fixing a cast-iron heavy-duty cover. Item 19.19.1.1 (precast RCC cover) has no labour."
+      },
+      "derived": {
+        "resource_days": {
+          "beldar": 0.6
+        },
+        "limiting_resource": "beldar"
+      },
+      "duration_days": 1,
+      "gangs_used": 1,
+      "duration_basis": "computed"
+    },
+    {
+      "activity_id": "A18",
+      "activity_class": "MANHOLE_MS",
+      "description": "MS heavy duty manhole 600x1200",
+      "quantity": 1,
+      "unit": "no",
+      "rate": 14000,
+      "predecessors": [
+        "A06"
+      ],
+      "productivity": {
+        "source": "DAR V2 19.18.3",
+        "match_quality": "proxy",
+        "unit": "no",
+        "coefficients_days_per_unit": {
+          "beldar": 0.12
+        },
+        "default_gang": {
+          "beldar": 2
+        },
+        "output_per_gang_day": 16.67,
+        "note": "Proxy: no MS manhole cover item in DAR or IS 7272."
+      },
+      "derived": {
+        "resource_days": {
+          "beldar": 0.12
+        },
+        "limiting_resource": "beldar"
+      },
+      "duration_days": 1,
+      "gangs_used": 1,
+      "duration_basis": "computed"
+    }
+  ]
+}

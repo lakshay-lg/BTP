@@ -1,0 +1,52 @@
+{
+  "project_type": "RAIN_WATER_HARVESTING",
+  "description": "Precedence rules for RWH systems: RCC tank(s) plus recharge bore well. Keyed by activity_class, never by activity id. A class absent from the BOQ is bypassed: its successors attach to its predecessors.",
+  "sources": [
+    "docs/METHODOLOGY.md, section RWH (tank 2 excavation follows tank 1 PCC; bore well follows mobilisation only; all tracks converge at commissioning)",
+    "Original RWH schedule workbook (7-day curing wait, backfill then filter media, testing and handover)"
+  ],
+  "structures": {"label": "Tank", "prefix": "T", "default_count": 1},
+  "classes": {
+    "MOBILISATION": {
+      "scope": "project", "after": [],
+      "synthetic": {"id": "MOB", "description": "Mobilization & site setup", "unit": "LS", "quantity": 1,
+                    "rate": 150000, "fixed_days": 6, "include": "always",
+                    "note": "rate and 6 days taken from the original workbook; edit or zero for other projects"}
+    },
+    "EXCAVATION_MECHANICAL": {
+      "scope": "structure", "after": ["MOBILISATION"],
+      "stagger": {"after": "PCC_LEAN", "note": "shared earthwork/PCC crew: next tank starts excavating once the previous tank's PCC is done"}
+    },
+    "PCC_LEAN": {"scope": "structure", "after": ["EXCAVATION_MECHANICAL"]},
+    "STEEL_REINFORCEMENT": {"scope": "structure", "after": ["PCC_LEAN"], "stagger": {"after": "STEEL_REINFORCEMENT"}},
+    "SHUTTERING_FOUNDATION": {"scope": "structure", "after": ["PCC_LEAN"], "stagger": {"after": "SHUTTERING_FOUNDATION"}},
+    "RCC_FOOTING": {"scope": "structure", "after": ["STEEL_REINFORCEMENT", "SHUTTERING_FOUNDATION"], "stagger": {"after": "RCC_FOOTING"}},
+    "RCC_SUPERSTRUCTURE": {"scope": "structure", "after": ["RCC_FOOTING"], "stagger": {"after": "RCC_SUPERSTRUCTURE"}},
+    "CURING_DESHUTTERING": {
+      "scope": "structure", "after": ["RCC_SUPERSTRUCTURE"],
+      "synthetic": {"id": "CUR", "description": "Curing & deshuttering (7-day wait)", "unit": "LS", "quantity": 1,
+                    "rate": 0, "fixed_days": 7, "include_if_any": ["RCC_FOOTING", "RCC_SUPERSTRUCTURE"]}
+    },
+    "BACKFILLING": {"scope": "structure", "after": ["CURING_DESHUTTERING"]},
+    "GRAVEL_FILL_BOULDER": {"scope": "structure", "after": ["BACKFILLING"]},
+    "GRAVEL_FILL_GRAVEL": {"scope": "structure", "after": ["GRAVEL_FILL_BOULDER"]},
+    "GRAVEL_FILL_SAND": {"scope": "structure", "after": ["GRAVEL_FILL_GRAVEL"]},
+    "BOREWELL_DRILLING": {
+      "scope": "structure", "after": ["MOBILISATION"],
+      "stagger": {"after": "BOREWELL_DRILLING", "note": "one specialist rig: the next tank's bore is drilled after the previous one"}
+    },
+    "BOREWELL_PVC_SCREEN": {"scope": "structure", "after": ["BOREWELL_DRILLING"]},
+    "BOREWELL_PEA_GRAVEL": {"scope": "structure", "after": ["BOREWELL_PVC_SCREEN"]},
+    "BOREWELL_CLEANING": {"scope": "structure", "after": ["BOREWELL_PEA_GRAVEL"]},
+    "VENT_PIPE": {"scope": "structure", "after": ["BOREWELL_PVC_SCREEN"]},
+    "STEEL_FOOTREST": {"scope": "structure", "after": ["RCC_SUPERSTRUCTURE"]},
+    "MANHOLE_RCC": {"scope": "structure", "after": ["RCC_SUPERSTRUCTURE"]},
+    "MANHOLE_MS": {"scope": "structure", "after": ["RCC_SUPERSTRUCTURE"]},
+    "TESTING_HANDOVER": {
+      "scope": "project", "after": "ALL_TERMINAL",
+      "synthetic": {"id": "TEST", "description": "Joint testing & handover", "unit": "LS", "quantity": 1,
+                    "rate": 100000, "fixed_days": 6, "include": "always",
+                    "note": "rate and 6 days taken from the original workbook"}
+    }
+  }
+}

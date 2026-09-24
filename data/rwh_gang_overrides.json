@@ -1,0 +1,187 @@
+{
+  "_note": "Gangs calibrated so each duration is at or under the original plan's days. labour_headcount is the manpower this implies under DAR/IS productivity.",
+  "by_class": {
+    "EXCAVATION_MECHANICAL": {
+      "gangs": 1
+    },
+    "BACKFILLING": {
+      "gangs": 1
+    },
+    "PCC_LEAN": {
+      "gangs": 2
+    },
+    "SHUTTERING_FOUNDATION": {
+      "gangs": 6
+    },
+    "STEEL_REINFORCEMENT": {
+      "gangs": 3
+    },
+    "RCC_FOOTING": {
+      "gangs": 3
+    },
+    "RCC_SUPERSTRUCTURE": {
+      "gangs": 3
+    },
+    "GRAVEL_FILL_BOULDER": {
+      "gangs": 1
+    },
+    "GRAVEL_FILL_GRAVEL": {
+      "gangs": 1
+    },
+    "GRAVEL_FILL_SAND": {
+      "gangs": 1
+    },
+    "BOREWELL_DRILLING": {
+      "gangs": 1
+    },
+    "BOREWELL_PVC_SCREEN": {
+      "gangs": 1
+    },
+    "STEEL_FOOTREST": {
+      "gangs": 2
+    },
+    "BOREWELL_PEA_GRAVEL": {
+      "gangs": 1
+    },
+    "VENT_PIPE": {
+      "gangs": 1
+    },
+    "MANHOLE_RCC": {
+      "gangs": 1
+    },
+    "MANHOLE_MS": {
+      "gangs": 1
+    },
+    "BOREWELL_CLEANING": {
+      "gangs": 1
+    }
+  },
+  "_calibration": {
+    "A01": {
+      "class": "EXCAVATION_MECHANICAL",
+      "one_gang_days": 8.2,
+      "original_days": 12,
+      "gangs": 1,
+      "labour_headcount": 2
+    },
+    "A07": {
+      "class": "BACKFILLING",
+      "one_gang_days": 4.1,
+      "original_days": 5,
+      "gangs": 1,
+      "labour_headcount": 20
+    },
+    "A02": {
+      "class": "PCC_LEAN",
+      "one_gang_days": 2.5,
+      "original_days": 2,
+      "gangs": 2,
+      "labour_headcount": 22
+    },
+    "A04": {
+      "class": "SHUTTERING_FOUNDATION",
+      "one_gang_days": 67.7,
+      "original_days": 12,
+      "gangs": 6,
+      "labour_headcount": 36
+    },
+    "A03": {
+      "class": "STEEL_REINFORCEMENT",
+      "one_gang_days": 29.7,
+      "original_days": 12,
+      "gangs": 3,
+      "labour_headcount": 30
+    },
+    "A05": {
+      "class": "RCC_FOOTING",
+      "one_gang_days": 9.0,
+      "original_days": 4,
+      "gangs": 3,
+      "labour_headcount": 54
+    },
+    "A06": {
+      "class": "RCC_SUPERSTRUCTURE",
+      "one_gang_days": 18.8,
+      "original_days": 9,
+      "gangs": 3,
+      "labour_headcount": 54
+    },
+    "A08": {
+      "class": "GRAVEL_FILL_BOULDER",
+      "one_gang_days": 1.6,
+      "original_days": 4,
+      "gangs": 1,
+      "labour_headcount": 8
+    },
+    "A09": {
+      "class": "GRAVEL_FILL_GRAVEL",
+      "one_gang_days": 1.6,
+      "original_days": 3,
+      "gangs": 1,
+      "labour_headcount": 8
+    },
+    "A10": {
+      "class": "GRAVEL_FILL_SAND",
+      "one_gang_days": 1.6,
+      "original_days": 3,
+      "gangs": 1,
+      "labour_headcount": 8
+    },
+    "A11": {
+      "class": "BOREWELL_DRILLING",
+      "one_gang_days": 4.8,
+      "original_days": 6,
+      "gangs": 1,
+      "labour_headcount": 8
+    },
+    "A12": {
+      "class": "BOREWELL_PVC_SCREEN",
+      "one_gang_days": 0.3,
+      "original_days": 3,
+      "gangs": 1,
+      "labour_headcount": 4
+    },
+    "A15": {
+      "class": "STEEL_FOOTREST",
+      "one_gang_days": 1.8,
+      "original_days": 1,
+      "gangs": 2,
+      "labour_headcount": 6
+    },
+    "A13": {
+      "class": "BOREWELL_PEA_GRAVEL",
+      "one_gang_days": 0.6,
+      "original_days": 1,
+      "gangs": 1,
+      "labour_headcount": 4
+    },
+    "A16": {
+      "class": "VENT_PIPE",
+      "one_gang_days": 1.6,
+      "original_days": 2,
+      "gangs": 1,
+      "labour_headcount": 4
+    },
+    "A17": {
+      "class": "MANHOLE_RCC",
+      "one_gang_days": 0.3,
+      "original_days": 2,
+      "gangs": 1,
+      "labour_headcount": 2
+    },
+    "A18": {
+      "class": "MANHOLE_MS",
+      "one_gang_days": 0.1,
+      "original_days": 1,
+      "gangs": 1,
+      "labour_headcount": 2
+    },
+    "A14": {
+      "class": "BOREWELL_CLEANING",
+      "one_gang_days": 1.0,
+      "original_days": 1,
+      "gangs": 1,
+      "labour_headcount": 0
+    }
+  }
+}
