@@ -1,0 +1,28 @@
+[project]
+name = "buildflow-btp"
+version = "0.1.0"
+description = "Auditable BOQ-to-CPM schedule and cash-flow research prototype"
+requires-python = ">=3.11"
+dependencies = [
+  "Flask>=3.0,<4",
+  "openpyxl>=3.1,<4",
+  "jsonschema>=4.19,<5",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<9"]
+
+[project.scripts]
+buildflow = "buildflow.cli:main"
+
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["buildflow*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+pythonpath = ["."]

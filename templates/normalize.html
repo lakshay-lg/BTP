@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Review chat-normalized BOQ · BuildFlow</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="/static/style.css"><link rel="stylesheet" href="/static/overrides.css">
+  <link rel="stylesheet" href="/static/normalize.css">
+</head>
+<body class="normalize-page">
+  <header class="topbar"><a class="brand" href="/">BuildFlow <small>BOQ review</small></a><a href="/workbench" class="back-link">Standard workbench</a></header>
+  <main>
+    <section class="hero">
+      <h1>From your BOQ to a reviewed planning draft.</h1>
+      <p>Use the chat service you already have to read your Excel. Bring its normalized file back here for source checks and planner review. No AI API key needed.</p>
+    </section>
+    <section class="intake-grid" aria-label="Normalize and upload your BOQ">
+      <article class="handoff-panel">
+        <div class="step-heading"><span class="step-number" aria-hidden="true">1</span><div><h2>Normalize with your AI</h2><p>Choose where to read the original workbook.</p></div></div>
+        <div class="provider-options">
+          <a href="https://chatgpt.com/" data-provider="ChatGPT" target="_blank" rel="noopener noreferrer"><strong>ChatGPT</strong><span>Copy prompt &amp; open <span aria-hidden="true">↗</span></span></a>
+          <a href="https://claude.ai/new" data-provider="Claude" target="_blank" rel="noopener noreferrer"><strong>Claude</strong><span>Copy prompt &amp; open <span aria-hidden="true">↗</span></span></a>
+          <a href="https://gemini.google.com/app" data-provider="Gemini" target="_blank" rel="noopener noreferrer"><strong>Gemini</strong><span>Copy prompt &amp; open <span aria-hidden="true">↗</span></span></a>
+        </div>
+        <p class="handoff-instructions">In the new tab, <strong>paste the prompt and attach your original Excel</strong>. Send the message, then download the model’s <code>normalized_boq.json</code>.</p>
+        <p id="promptStatus" class="prompt-status" role="status" aria-live="polite">Buttons copy instructions, not your files. You choose what to share with the provider.</p>
+        <details id="promptDetails">
+          <summary>View or manually copy the prompt</summary>
+          <label for="normalizerPrompt">Normalization instructions</label>
+          <textarea id="normalizerPrompt" readonly spellcheck="false">{{ normalizer_prompt }}</textarea>
+        </details>
+        <div class="prompt-actions"><button type="button" id="copyPrompt" class="text-button">Copy prompt only</button><a href="/api/normalization/prompt">Download prompt</a><a href="/api/normalization/schema">File specification</a></div>
+        <p class="privacy-note">Uses your own account and plan limits. These are regular chat instructions; the portal does not set a provider’s system prompt or transfer attachments automatically.</p>
+        <noscript><p>JavaScript is disabled. Download or manually copy the prompt, then open a provider above. File validation requires JavaScript.</p></noscript>
+      </article>
+      <article class="handoff-panel upload-panel">
+        <div class="step-heading"><span class="step-number" aria-hidden="true">2</span><div><h2>Bring back the normalized file</h2><p>Already have it? Start here.</p></div></div>
+        <form id="sourceForm">
+          <label class="normalized-upload">Normalized JSON from your chat<input name="normalized" type="file" accept=".json,application/json" required><span>Choose normalized_boq.json</span></label>
+          <label>Original Excel workbook(s)<input name="originals" type="file" accept=".xlsx,.xlsm" multiple required></label>
+          <p class="demo-note">Include the same original files you attached to the chat. We compare their cells with the JSON; filenames must match.</p>
+          <button class="run-button" id="reviewButton" type="submit">Check against originals</button>
+          <p class="privacy-note">Excel + JSON, 20 MB combined. Chat JSON: 2 MB maximum; saved reviewed JSON: 5 MB. Original files are never modified.</p>
+        </form>
+      </article>
+    </section>
+    <section class="review-workspace">
+      <section class="results-panel">
+        <div id="reviewStatus" role="status" aria-live="polite">Upload both versions to begin. Source checks and engineering readiness are assessed separately.</div>
+        <p id="reviewError" role="alert" class="hidden"></p>
+        <div id="reviewOutput" class="hidden">
+          <div class="metric-grid" id="reviewMetrics"></div>
+          <article class="card">
+            <div class="card-heading"><div><h2>Effective items and source evidence</h2><small>Values below reflect the last successful recheck. Original AI proposals remain in the decision editor.</small></div></div>
+            <div class="table-wrap" tabindex="0" role="region" aria-label="Normalised BOQ source comparison">
+              <table class="review-table"><thead><tr><th>Source item</th><th>Description and evidence</th><th>Quantity</th><th>Proposed operation</th><th>Amount</th></tr></thead><tbody id="reviewRows"></tbody></table>
+            </div>
+          </article>
+          <article class="card findings-card"><h2>Resolve before calculation</h2><p class="demo-note">Source checks verify cell values, not semantic correctness. Decisions can acknowledge a value difference, but cannot waive missing scope or unsupported engineering.</p><div id="reviewChecks"></div><details><summary>Original source-check history (retained)</summary><div id="originalChecks"></div></details></article>
+          <article class="card findings-card">
+            <h2>Review and correct values</h2>
+            <p class="demo-note">Choose Excel, accept an existing AI proposal, or enter a manual value. Reasons are optional; reviewer names are required. Source evidence repairs are computed locally; no AI API is called.</p>
+            <label>Decision reviewer<input id="decisionReviewer" maxlength="120" autocomplete="name" placeholder="Your name"></label>
+            <div class="bulk-decisions">
+              <label>Shared reason (optional)<input id="bulkReason" maxlength="30000" placeholder="Applies to all bulk-selected AI values"></label>
+              <button type="button" id="useAllAI" class="export-button">Use AI values for all editable fields</button>
+              <p class="demo-note">Selects the proposals already in your JSON, including missing values. Evidence repairs are left unchanged. You can adjust individual choices afterward; rechecking is still required.</p>
+            </div>
+            <div id="decisionEditor"></div>
+            <p id="decisionState" role="status" aria-live="polite"></p>
+            <div class="decision-toolbar"><button type="button" id="recheckDecisions" class="export-button">Recheck changes</button><button type="button" id="downloadReview" class="export-button">Save reviewed JSON</button></div>
+            <p class="demo-note">Saved drafts may contain unresolved checks. To resume, upload the reviewed JSON and the same original Excel files. Saving does not approve a model run.</p>
+          </article>
+          <article class="card findings-card">
+            <h2>Planner confirmation</h2>
+            <p class="demo-note">Use independently confirmed project settings. Proposed labels are preserved after review; the keyword classifier will not overwrite them.</p>
+            <form id="approvalForm">
+              <div class="approval-grid">
+                <label>Reviewer name<input name="reviewer" maxlength="120" required autocomplete="name"></label>
+                <label>Project name<input name="name" required maxlength="250"></label>
+                <label>Project type<select name="typology" required><option value="">Choose type</option><option value="rwh">RWH + borewell</option><option value="stp_tank">STP / deep tank</option><option value="linear_mep">Linear MEP</option><option value="building">RCC building</option></select></label>
+                <label>Project start<input name="start_date" type="date" required></label>
+                <label>Number of structures<input name="structure_count" type="number" min="1" max="100" required></label>
+                <label>Quantity basis<select name="quantity_basis" required><option value="">Confirm scope</option><option value="project_total">Source quantities are project totals</option></select></label>
+                <label>Output<select name="cashflow_mode" id="importCashMode"><option value="schedule">Schedule only</option><option value="compare">Schedule and cash-flow comparison</option></select></label>
+                <label>Contract duration (working days)<input name="contract_duration_days" id="importContractDays" type="number" min="1" max="3650"></label>
+              </div>
+              <label class="review-checkbox"><input name="review_confirmed" type="checkbox" value="true" required><span>I reviewed every description, classification, source context and the complete item inventory, including possible omitted lines.</span></label>
+              <label class="review-checkbox"><input name="scope_confirmed" type="checkbox" value="true" required><span>I confirm the reviewed effective quantities cover the complete project and the number of structures entered above.</span></label>
+              <label class="review-checkbox"><input name="contract_confirmed" id="importContractConfirmed" type="checkbox" value="true"><span>The entered working-day duration is independently confirmed from project information, not copied from this model’s CPM schedule.</span></label>
+              <p id="admissionNote" class="demo-note"></p>
+              <button id="analyzeImport" type="submit" class="run-button">Run reviewed model</button>
+            </form>
+          </article>
+        </div>
+        <article id="importResult" class="card findings-card hidden" aria-live="polite"></article>
+      </section>
+    </section>
+  </main>
+  <script src="/static/chat-handoff.js"></script>
+  <script src="/static/review-decisions.js"></script>
+  <script src="/static/normalize.js"></script>
+</body>
+</html>

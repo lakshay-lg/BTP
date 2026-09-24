@@ -1,0 +1,15 @@
+Item,Description,Unit,Quantity,Rate,Amount
+1,Excavation of sewer trench along road alignment,cum,2100,230,483000
+2,Laying and jointing 200 mm DWC sewer pipe,m,1450,1250,1812500
+3,Construction of brick masonry manholes on sewer line,nos,32,28500,912000
+4,Back filling sewer trench with excavated earth,cum,1680,125,210000
+5,Excavation of storm water drainage trench,cum,1850,230,425500
+6,Laying RCC NP3 pipe for storm water drain 450 mm,m,820,1850,1517000
+7,Construction of storm water inspection chambers,nos,18,24000,432000
+8,Back filling storm water trench,cum,1420,125,177500
+9,Excavation for HDPE pressure pipeline,cum,420,230,96600
+10,Laying jointing and pressure testing HDPE pipe,m,1100,520,572000
+11,Backfilling of HDPE pressure pipe trench,cum,330,125,41250
+12,Internal drainage SWR pipe and floor trap connections,m,360,680,244800
+13,Road restoration with granular sub base after trenching,sqm,950,620,589000
+14,Integrated testing flushing and commissioning,set,1,95000,95000

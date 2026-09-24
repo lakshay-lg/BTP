@@ -1,0 +1,12 @@
+Item,Description,Unit,Quantity,Rate,Amount
+1,Earth work excavation for two rain water harvesting tanks,cum,420,240,100800
+2,Plain cement concrete below RWH tank bases,cum,24,5200,124800
+3,Reinforced cement concrete M25 in two tank rafts walls and covers,cum,95,6500,617500
+4,TMT reinforcement steel for both RCC tanks,tonne,12.5,70000,875000
+5,Formwork to RCC tank rafts walls and covers,sqm,520,550,286000
+6,Waterproofing treatment to internal tank surfaces,sqm,430,450,193500
+7,Back filling around both completed tanks,cum,250,130,32500
+8,Borewell drilling to 30 m depth for recharge wells,m,60,2100,126000
+9,Slotted pipe pea gravel and borewell completion,m,60,1350,81000
+10,UPVC plumbing connections and rainwater inlet pipe,m,120,720,86400
+11,Testing and commissioning of rainwater harvesting system,set,1,45000,45000

@@ -1,0 +1,15 @@
+Item,Description,Unit,Quantity,Rate,Amount
+1,Earth work excavation for 550 KLD STP tank including disposal,cum,5200,240,1248000
+2,Extra lift surcharge for excavation beyond initial lead,cum,3100,90,279000
+3,Plain cement concrete blinding below tank raft,cum,180,5200,936000
+4,Reinforced cement concrete M30 in raft walls and roof slab Base Rate 6500 per cum,cum,520,6500,3380000
+5,TMT steel reinforcement for RCC tank work,tonne,62,70000,4340000
+6,Centering and shuttering formwork for raft walls and roof,sqm,1600,550,880000
+7,Waterproof chemical coating to water retaining faces,sqm,1500,450,675000
+8,Back filling around completed tank in compacted layers,cum,3500,130,455000
+9,Brick work in plant room,cum,65,7200,468000
+10,Kota stone flooring in plant room,sqft,1200,35,42000
+11,Texture paint to external plant room surfaces,sqft,3200,15,48000
+12,Supply installation and testing of sewage pumps blowers and screens,nos,6,160000,960000
+13,Electrical control panel cabling and earthing,set,1,485000,485000
+14,Internal piping and plumbing connections to process units,set,1,325000,325000

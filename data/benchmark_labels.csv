@@ -1,0 +1,21 @@
+description,unit,expected_package
+Mechanical excavation for foundation trenches including disposal,cum,earthwork
+Extra lift surcharge beyond 1.5 metre depth,cum,earthwork
+Providing PCC blinding below raft,cum,pcc
+Design mix M30 RCC in retaining walls,cum,rcc
+TMT reinforcement bars for reinforced concrete,kg,reinforcement
+Centering shuttering and formwork to roof slab,sqm,formwork
+SBR waterproof coating on internal tank faces,sqm,waterproofing
+Backfilling sewer trench in compacted layers,cum,backfill
+Laying 200 mm DWC external sewer line,m,sewer_pipe
+Constructing masonry manhole on sewer alignment,nos,manhole
+Laying 450 mm RCC NP3 storm water pipe,m,storm_pipe
+Laying and pressure testing HDPE pumping main,m,pressure_pipe
+Internal SWR drainage and floor trap connections,m,internal_drainage
+Drilling recharge borewell up to 30 m,m,borewell
+Brick masonry partition in cement mortar,cum,masonry
+Kota stone flooring and skirting,sqm,finishes
+Electrical control panel cabling and earthing,set,electrical
+Supply erection of pumps and blowers,nos,mechanical_equipment
+Road restoration with GSB after utility trenching,sqm,road_reinstatement
+Hydrostatic leak test and commissioning,set,testing

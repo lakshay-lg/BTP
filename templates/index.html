@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Auditable BOQ-to-schedule and cash-flow research prototype" />
+    <title>BuildFlow — BOQ planning workbench</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%23112638'/%3E%3Cpath d='M7 23V14h5v9zm7 0V7h5v16zm7 0V11h5v12z' fill='%2319a393'/%3E%3C/svg%3E" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/static/style.css" />
+    <link rel="stylesheet" href="/static/overrides.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="/" aria-label="BuildFlow home">
+        <span class="brand-mark"><i></i><i></i><i></i></span>
+        <span>BuildFlow</span>
+        <small>research prototype</small>
+      </a>
+      <div class="topbar-note"><span></span> AI reads · engineering methods plan</div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="eyebrow">IIT Delhi · Civil Engineering · CVD 411</div>
+        <h1>A first-draft plan you can<br /><em>inspect, challenge and revise.</em></h1>
+        <p>Turn a priced BOQ into a typology-aware CPM network and two monthly cash-flow views—without letting an LLM invent the arithmetic.</p>
+        <div class="method-strip" aria-label="Method pipeline">
+          <span><b>01</b> Parse</span><i></i><span><b>02</b> Classify</span><i></i><span><b>03</b> CPM</span><i></i><span><b>04</b> Cash flow</span><i></i><span><b>05</b> Audit</span>
+        </div>
+      </section>
+
+      <section class="workbench">
+        <aside class="control-panel">
+          <div class="panel-heading">
+            <div><span>New analysis</span><small>Inputs and model controls</small></div>
+            <button id="resetBtn" class="icon-button" title="Reset form">↻</button>
+          </div>
+          <form id="analysisForm">
+            <fieldset>
+              <legend>BOQ source</legend>
+              <div class="sample-grid">
+                <button type="button" class="sample active" data-sample="stp"><span>STP</span><small>Deep RCC tanks</small></button>
+                <button type="button" class="sample" data-sample="mep"><span>MEP</span><small>Linear networks</small></button>
+                <button type="button" class="sample" data-sample="rwh"><span>RWH</span><small>Tanks + borewell</small></button>
+              </div>
+              <p class="demo-note">Built-in rows are sanitised demonstrations—not validation evidence.</p>
+              <p class="demo-note"><a href="/normalize">Using your own chat model? Review a normalised BOQ</a></p>
+              <input type="hidden" name="sample_id" id="sampleId" value="stp" />
+              <label class="upload" id="uploadLabel">
+                <input id="boqFile" name="file" type="file" accept=".csv,.xlsx,.xlsm" />
+                <span class="upload-icon">⇧</span>
+                <span><b>Upload your BOQ</b><small>CSV or Excel · max 20 MB</small></span>
+              </label>
+            </fieldset>
+
+            <fieldset>
+              <legend>Project details</legend>
+              <label>Project name<input name="name" id="projectName" placeholder="Project title" /></label>
+              <div class="field-row">
+                <label>Typology
+                  <select name="typology" id="typology">
+                    <option value="auto">Auto-detect</option><option value="building">RCC building</option><option value="stp_tank">STP / deep tank</option><option value="linear_mep">Linear MEP</option><option value="rwh">RWH + borewell</option>
+                  </select>
+                </label>
+                <label>Start date<input name="start_date" id="startDate" type="date" value="2026-04-25" required /></label>
+              </div>
+              <div class="field-row three">
+                <label>Contract days<input name="contract_duration_days" id="contractDays" type="number" min="1" value="150" /></label>
+                <label>Structures<input name="structure_count" id="structureCount" type="number" min="1" max="20" value="1" /></label>
+                <label>Crew factor<input name="crew_multiplier" type="number" min="0.25" max="5" step="0.25" value="1" /></label>
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <legend>Analysis settings</legend>
+              <label>BOQ reader
+                <select name="classifier_mode">
+                  <option value="hybrid">Hybrid rules + retrieval</option><option value="rules">Keyword rules baseline</option><option value="retrieval">Retrieval-only baseline</option>
+                </select>
+              </label>
+              <label>Cash-flow model
+                <select name="cashflow_mode">
+                    <option value="compare">Compare both curves</option><option value="schedule">CPM-linked only</option><option value="phase">Independent phase curve</option>
+                </select>
+              </label>
+              <div class="field-row three">
+                <label>Overhead %<input name="indirect_cost_pct" type="number" min="0" max="100" step="0.5" value="5" /></label>
+                <label>Retention %<input name="retention_pct" type="number" min="0" max="100" step="0.5" value="5" /></label>
+                <label>Pay lag<input name="payment_lag_months" type="number" min="0" max="12" value="1" /></label>
+              </div>
+              <label class="toggle-row">
+                <span><b>AI fallback</b><small>Send only ambiguous descriptions to Groq (free tier; needs GROQ_API_KEY)</small></span>
+                <input type="checkbox" name="use_llm_fallback" value="true" /><i></i>
+              </label>
+            </fieldset>
+
+            <button class="run-button" type="submit"><span>Generate auditable draft</span><b>→</b></button>
+            <p class="privacy-note">AI fallback is off by default. No uploaded BOQ leaves this machine unless you explicitly enable it.</p>
+          </form>
+        </aside>
+
+        <section class="results-panel" id="resultsPanel">
+          <div id="emptyState" class="empty-state">
+            <div class="blueprint">
+              <div class="grid-lines"></div><span class="tank t1"></span><span class="tank t2"></span><span class="pipe"></span><span class="dimension">BOQ → baseline</span>
+            </div>
+            <h2>Your planning evidence appears here</h2>
+            <p>Run a sample or upload a priced BOQ. Every generated number will link back to a classification, productivity rate or explicit assumption.</p>
+            <div class="trust-list"><span>✓ Cost reconciliation</span><span>✓ Cycle detection</span><span>✓ Critical path</span><span>✓ Risk flags</span></div>
+          </div>
+
+          <div id="loadingState" class="loading-state hidden">
+            <div class="loader"><i></i><i></i><i></i></div>
+            <h2>Constructing the first draft</h2>
+            <p id="loadingText">Reading and standardising BOQ rows…</p>
+          </div>
+
+          <div id="results" class="results hidden">
+            <div class="result-header">
+              <div><span class="status-pill">Draft generated</span><span id="provenancePill" class="status-pill provenance-pill"></span><h2 id="resultTitle"></h2><p id="resultSubtitle"></p></div>
+              <a id="exportLink" class="export-button" href="#">Export Excel <b>↓</b></a>
+            </div>
+
+            <div class="metric-grid">
+              <article><small>BOQ value</small><strong id="metricValue">—</strong><span id="metricRecon">—</span></article>
+              <article><small>CPM duration</small><strong id="metricDuration">—</strong><span id="metricFinish">—</span></article>
+              <article><small>Classification</small><strong id="metricClassified">—</strong><span id="metricConfidence">—</span></article>
+              <article><small>Review flags</small><strong id="metricFlags">—</strong><span>planner decisions required</span></article>
+            </div>
+
+            <nav class="tabs" aria-label="Analysis outputs">
+              <button class="active" data-tab="overview">Overview</button><button data-tab="schedule">CPM schedule</button><button data-tab="cashflow">Cash flow</button><button data-tab="boq">BOQ reader</button><button data-tab="audit">Audit trail</button>
+            </nav>
+
+            <div id="overview" class="tab-panel active">
+              <div class="split-grid">
+                <article class="card">
+                  <div class="card-heading"><div><small>Network result</small><h3>Critical path</h3></div><span id="criticalCount"></span></div>
+                  <div id="criticalPath" class="critical-path"></div>
+                </article>
+                <article class="card">
+                  <div class="card-heading"><div><small>Research comparison</small><h3>Cash-curve divergence</h3></div></div>
+                  <div class="comparison-stat"><strong id="curveMae">—</strong><span>monthly MAE<br />as % of BOQ value</span></div>
+                  <div class="peak-row"><span>CPM peak <b id="schedulePeak">—</b></span><span>Independent peak <b id="independentPeak">—</b></span></div>
+                </article>
+              </div>
+              <article class="card findings-card"><div class="card-heading"><div><small>Automated checks</small><h3>What a planner must review</h3></div></div><div id="topFindings"></div></article>
+            </div>
+
+            <div id="schedule" class="tab-panel">
+              <article class="card wide-card">
+                <div class="card-heading"><div><small>6-day working week</small><h3>CPM Gantt</h3></div><button id="editSchedule" class="text-button">Edit durations</button></div>
+                <div id="gantt" class="gantt"></div>
+                <div id="replanBar" class="replan-bar hidden"><span>Planner edits are local assumptions and will be recorded in the trace.</span><button id="saveReplan">Recalculate CPM</button></div>
+              </article>
+            </div>
+
+            <div id="cashflow" class="tab-panel">
+              <article class="card wide-card"><div class="card-heading"><div><small>Monthly planned work value</small><h3>S-curve comparison</h3></div><div class="legend"><span class="solid">CPM linked</span><span class="dash">Independent</span></div></div><div id="cashChart" class="cash-chart"></div></article>
+              <article class="card wide-card table-card"><div class="card-heading"><div><small>Primary curve</small><h3>Monthly cash-flow ledger</h3></div></div><div class="table-wrap"><table><thead><tr><th>Month</th><th>Work value</th><th>Expenditure</th><th>Receipt</th><th>Net flow</th><th>Cumulative</th></tr></thead><tbody id="cashRows"></tbody></table></div></article>
+            </div>
+
+            <div id="boq" class="tab-panel">
+              <article class="card wide-card table-card"><div class="card-heading"><div><small>Review descriptions, classification and supporting evidence</small><h3>Classified BOQ rows</h3></div><input id="boqSearch" type="search" aria-label="Filter BOQ descriptions" placeholder="Search BOQ descriptions…" /></div><div class="table-wrap" tabindex="0" role="region" aria-label="Classified BOQ rows, scroll for more columns"><table><thead><tr><th>ID</th><th>Description</th><th>Quantity</th><th>Amount</th><th>Package</th><th>Confidence</th><th>Evidence</th></tr></thead><tbody id="boqRows"></tbody></table></div></article>
+            </div>
+
+            <div id="audit" class="tab-panel">
+              <div class="split-grid audit-grid"><article class="card"><div class="card-heading"><div><small>Agent calls</small><h3>Orchestration trace</h3></div></div><div id="traceList" class="trace-list"></div></article><article class="card"><div class="card-heading"><div><small>Declared model limits</small><h3>Assumptions</h3></div></div><ol id="assumptionList" class="assumption-list"></ol></article></div>
+            </div>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <div id="toast" class="toast hidden"></div>
+    <script src="/static/app.js"></script>
+  </body>
+</html>
